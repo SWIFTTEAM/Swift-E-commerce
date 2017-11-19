@@ -18,6 +18,12 @@
 		DE21EF121FA226BD0027F747 /* login.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE21EF111FA226BD0027F747 /* login.swift */; };
 		DE21EF161FA2279B0027F747 /* login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE21EF151FA2279B0027F747 /* login.storyboard */; };
 		DE21EF191FA229200027F747 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE21EF181FA228A50027F747 /* Reachability.swift */; };
+		DEF545141FC1F2150004DE3E /* registered.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF545131FC1F2150004DE3E /* registered.swift */; };
+		DEF5451A1FC1F2210004DE3E /* logincheck.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEF545151FC1F2200004DE3E /* logincheck.storyboard */; };
+		DEF5451B1FC1F2210004DE3E /* registered.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEF545161FC1F2200004DE3E /* registered.storyboard */; };
+		DEF5451C1FC1F2210004DE3E /* forget_password.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF545171FC1F2210004DE3E /* forget_password.swift */; };
+		DEF5451D1FC1F2210004DE3E /* forget_password.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEF545181FC1F2210004DE3E /* forget_password.storyboard */; };
+		DEF5451E1FC1F2210004DE3E /* logincheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF545191FC1F2210004DE3E /* logincheck.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +61,12 @@
 		DE21EF111FA226BD0027F747 /* login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = login.swift; sourceTree = "<group>"; };
 		DE21EF151FA2279B0027F747 /* login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = login.storyboard; sourceTree = "<group>"; };
 		DE21EF181FA228A50027F747 /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		DEF545131FC1F2150004DE3E /* registered.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = registered.swift; sourceTree = "<group>"; };
+		DEF545151FC1F2200004DE3E /* logincheck.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = logincheck.storyboard; sourceTree = "<group>"; };
+		DEF545161FC1F2200004DE3E /* registered.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = registered.storyboard; sourceTree = "<group>"; };
+		DEF545171FC1F2210004DE3E /* forget_password.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = forget_password.swift; sourceTree = "<group>"; };
+		DEF545181FC1F2210004DE3E /* forget_password.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = forget_password.storyboard; sourceTree = "<group>"; };
+		DEF545191FC1F2210004DE3E /* logincheck.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = logincheck.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +153,12 @@
 			children = (
 				DE21EF111FA226BD0027F747 /* login.swift */,
 				DE21EF151FA2279B0027F747 /* login.storyboard */,
+				DEF545131FC1F2150004DE3E /* registered.swift */,
+				DEF545161FC1F2200004DE3E /* registered.storyboard */,
+				DEF545171FC1F2210004DE3E /* forget_password.swift */,
+				DEF545181FC1F2210004DE3E /* forget_password.storyboard */,
+				DEF545191FC1F2210004DE3E /* logincheck.swift */,
+				DEF545151FC1F2200004DE3E /* logincheck.storyboard */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -261,9 +279,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				DE21EF161FA2279B0027F747 /* login.storyboard in Resources */,
+				DEF5451A1FC1F2210004DE3E /* logincheck.storyboard in Resources */,
 				DE21EEED1FA226400027F747 /* LaunchScreen.storyboard in Resources */,
 				DE21EEEA1FA226400027F747 /* Assets.xcassets in Resources */,
+				DEF5451B1FC1F2210004DE3E /* registered.storyboard in Resources */,
 				DE21EEE51FA226400027F747 /* Main.storyboard in Resources */,
+				DEF5451D1FC1F2210004DE3E /* forget_password.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -290,9 +311,12 @@
 			files = (
 				DE21EEE81FA226400027F747 /* Ecommerce.xcdatamodeld in Sources */,
 				DE21EEE21FA226400027F747 /* ViewController.swift in Sources */,
+				DEF5451E1FC1F2210004DE3E /* logincheck.swift in Sources */,
+				DEF5451C1FC1F2210004DE3E /* forget_password.swift in Sources */,
 				DE21EEE01FA226400027F747 /* AppDelegate.swift in Sources */,
 				DE21EF191FA229200027F747 /* Reachability.swift in Sources */,
 				DE21EF121FA226BD0027F747 /* login.swift in Sources */,
+				DEF545141FC1F2150004DE3E /* registered.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
