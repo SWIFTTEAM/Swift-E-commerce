@@ -5,13 +5,12 @@
 //  Created by Abao on 2017/11/19.
 //  Copyright © 2017年 Ecommerce. All rights reserved.
 //
-
-//import KeychainSwift
+/*
+import KeychainSwift
 import Foundation
 import UIKit
 
 class logincheck: UIViewController{
-    /*
     //如果打開之後先前有記住密碼
     let myPassword = "secret password"
     let keychain = KeychainSwift()
@@ -32,10 +31,9 @@ class logincheck: UIViewController{
     else{
         passwordhave=null;
     }
-  */
     
 }
-
+ */
 
 
 

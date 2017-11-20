@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Registered-->
         <scene sceneID="Te9-RK-APc">
             <objects>
-                <viewController id="4iV-w7-5n8" sceneMemberID="viewController">
+                <viewController id="4iV-w7-5n8" customClass="registered" customModule="Ecommerce" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jM2-zh-VVx"/>
                         <viewControllerLayoutGuide type="bottom" id="wDK-Cr-iAH"/>
@@ -359,13 +359,13 @@
                                                 <rect key="frame" x="0.0" y="500.5" width="375" height="83"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XVM-zP-cW2">
-                                                        <rect key="frame" x="0.0" y="0.0" width="375" height="83"/>
+                                                        <rect key="frame" x="0.0" y="0.5" width="375" height="83"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CVQ-PJ-FtF">
                                                                 <rect key="frame" x="0.0" y="0.0" width="100" height="83"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="生日：" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5JM-wL-dhb">
-                                                                        <rect key="frame" x="0.0" y="0.5" width="100" height="83"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="100" height="83"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="29"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
@@ -383,7 +383,7 @@
                                                                 <rect key="frame" x="100" y="0.0" width="275" height="83"/>
                                                                 <subviews>
                                                                     <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="6ww-TD-eMP">
-                                                                        <rect key="frame" x="0.0" y="18" width="233" height="45"/>
+                                                                        <rect key="frame" x="0.0" y="18.5" width="233" height="45"/>
                                                                         <date key="date" timeIntervalSinceReferenceDate="532650691.71212798">
                                                                             <!--2017-11-17 22:31:31 +0000-->
                                                                         </date>
@@ -665,7 +665,7 @@
                                                                 <rect key="frame" x="100" y="0.0" width="275" height="96"/>
                                                                 <subviews>
                                                                     <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OMQ-9I-hyX">
-                                                                        <rect key="frame" x="0.0" y="23" width="72" height="51"/>
+                                                                        <rect key="frame" x="-1" y="23" width="73" height="51"/>
                                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                                                         <userDefinedRuntimeAttributes>
                                                                             <userDefinedRuntimeAttribute type="string" keyPath="keyPath" value="男"/>
@@ -969,7 +969,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sId-3W-mnJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-534" y="14"/>
+            <point key="canvasLocation" x="-96" y="14"/>
         </scene>
     </scenes>
     <resources>
