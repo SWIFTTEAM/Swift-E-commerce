@@ -6,7 +6,7 @@ if(isset($_POST['account']) && isset($_POST['password'])){
 	$account = $_POST['account'];
 	$pw = $_POST['password'];
 	
-	$selectS = "SELECT * FROM `ClientData` WHERE `Cli_Account` = '$account' AND `Cli_PW` = '$pw'";
+	$selectS = "SELECT * FROM `Customers` WHERE `CustomerAccount` = '$account' AND `CustomerPassword` = '$pw'";
 	$selectQ = mysql_query($selectS) or die(mysql_error());
 	
 	if(mysql_num_rows($selectQ) == 1){
