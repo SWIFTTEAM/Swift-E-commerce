@@ -10,9 +10,6 @@ import UIKit
 
 class login: UIViewController, UITextFieldDelegate{
     
-    @IBOutlet var VIEW: UIView!;
-    var DynamicView: UIView!;
-    
     let con = false;
     var count: Int = 0;
     
@@ -29,14 +26,15 @@ class login: UIViewController, UITextFieldDelegate{
     @IBOutlet var codeText: UITextField!;
     
     var code: String = "";
-    
-    let reachability = Reachability()!;
+    let internet = Internet();
     
     override func viewDidLoad() {
         super.viewDidLoad();
         
-        buildingVIEW(); //離線狀態時 秀出警告View
-        ReachabilityInternet(); //檢察網路狀態
+        anyClass = self;
+        internet.buildingVIEW(); //離線狀態時 秀出警告View
+        internet.ReachabilityInternet(); //檢察網路狀態
+        
         showRandom(); //驗證碼
         buildingImg(); //產生ImgClick
         buildingDelegate();
@@ -44,98 +42,11 @@ class login: UIViewController, UITextFieldDelegate{
     
     //--------------------------------------------------------------------
     
-    func buildingVIEW() -> Void {
-        DynamicView = UIView(frame: CGRect(x:0 ,y:-50 ,width:self.view.bounds.size.width ,height: 50));
-        DynamicView.backgroundColor = UIColor.red;
-        DynamicView.alpha = 0.8;
-        self.view.addSubview(DynamicView);
-    }
     
-    func OnOffLine(_ status: Int) -> Void {
-        print("OffOnline");
-        
-        if #available(iOS 10.0, *) {
-            Timer.scheduledTimer(withTimeInterval: 0.01, repeats:
-                true, block: {(timer) -> Void in
-                    
-                    switch(status){
-                    case 0:
-                        if self.DynamicView.frame.origin.y > 0 {
-                            timer.invalidate();
-                        } else {
-                            self.DynamicView.frame = self.DynamicView.frame.offsetBy(dx: 0, dy: 1);
-                        }
-                        break;
-                    case 1:
-                        if self.DynamicView.frame.origin.y < -50 {
-                            timer.invalidate();
-                        } else {
-                            self.DynamicView.frame = self.DynamicView.frame.offsetBy(dx: 0, dy: -1);
-                        }
-                        break;
-                    default:
-                        break;
-                    }
-                    
-            })
-        }
-    }
-    
-    //--------------------------------------------------------------------
-    
-    func ReachabilityInternet() -> Void {
-        reachability.whenReachable = { _ in
-            DispatchQueue.main.async {
-                print("green1");
-                self.view.backgroundColor = #colorLiteral(red: 0.2745098174, green: 0.4862745106, blue: 0.1411764771, alpha: 1);
-            }
-        }
-        reachability.whenUnreachable = { _ in
-            DispatchQueue.main.async {
-                print("red1");
-                self.view.backgroundColor = #colorLiteral(red: 0.9254902005, green: 0.2352941185, blue: 0.1019607857, alpha: 1);
-            }
-        }
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(internetChanged), name: ReachabilityChangedNotification, object: reachability);
-        do{
-            try reachability.startNotifier();
-        }catch{
-            print("could not start reachability");
-            return;
-        }
-    }
-    
-    @objc func internetChanged(note: Notification) -> Void {
-        let reachability = note.object as! Reachability;
-        
-        if reachability.isReachable {
-            if reachability.isReachableViaWiFi{
-                DispatchQueue.main.async {
-                    print("green_wifi");
-                    self.OnOffLine(1);
-                    self.view.backgroundColor = #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1);
-                }
-            }else{
-                DispatchQueue.main.async {
-                    print("yello_internet");
-                    self.OnOffLine(1);
-                    self.view.backgroundColor = #colorLiteral(red: 0.9948318601, green: 0.9917954803, blue: 0, alpha: 1);
-                }
-            }
-        }else{
-            DispatchQueue.main.async {
-                print("red");
-                self.OnOffLine(0);
-                self.view.backgroundColor = #colorLiteral(red: 0.9254902005, green: 0.2352941185, blue: 0.1019607857, alpha: 1);
-            }
-        }
-    }
-    
+
     //--------------------------------------------------------------------
     
     func showRandom() -> Void {
-        
         let show = random(4);
         
         for i in 0..<4 {
@@ -330,10 +241,8 @@ class login: UIViewController, UITextFieldDelegate{
                             }else{
                                 self.showMessage("驗證碼錯誤");
                             }
-                            
                         }else if(errorStatus == 2){
                             self.showMessage("帳號或密碼有錯誤");
-                            
                         }else if(errorStatus == 3){
                             self.showMessage("post錯誤");
                         }
@@ -347,7 +256,6 @@ class login: UIViewController, UITextFieldDelegate{
             }
         }
         task.resume();
-        
     }
     
     //--------------------------------------------------------------------

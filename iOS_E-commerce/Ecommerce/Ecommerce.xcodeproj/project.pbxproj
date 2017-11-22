@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DE1504461FC3024800FC8F61 /* usePHP.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1504451FC3024800FC8F61 /* usePHP.swift */; };
+		DE1504491FC30FCD00FC8F61 /* Internet.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1504481FC30FCD00FC8F61 /* Internet.swift */; };
 		DE21EEE01FA226400027F747 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE21EEDF1FA226400027F747 /* AppDelegate.swift */; };
 		DE21EEE21FA226400027F747 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE21EEE11FA226400027F747 /* ViewController.swift */; };
 		DE21EEE51FA226400027F747 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE21EEE31FA226400027F747 /* Main.storyboard */; };
@@ -44,6 +46,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DE1504451FC3024800FC8F61 /* usePHP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = usePHP.swift; sourceTree = "<group>"; };
+		DE1504481FC30FCD00FC8F61 /* Internet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Internet.swift; sourceTree = "<group>"; };
 		DE21EEDC1FA226400027F747 /* Ecommerce.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ecommerce.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE21EEDF1FA226400027F747 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DE21EEE11FA226400027F747 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -94,10 +98,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DE1504441FC3018C00FC8F61 /* phpSql */ = {
+			isa = PBXGroup;
+			children = (
+				DE1504451FC3024800FC8F61 /* usePHP.swift */,
+			);
+			path = phpSql;
+			sourceTree = "<group>";
+		};
 		DE21EED31FA226400027F747 = {
 			isa = PBXGroup;
 			children = (
 				DE21EF101FA2268E0027F747 /* Login */,
+				DE1504441FC3018C00FC8F61 /* phpSql */,
 				DE21EF171FA228790027F747 /* Reachability */,
 				DE21EEDE1FA226400027F747 /* Ecommerce */,
 				DE21EEF61FA226400027F747 /* EcommerceTests */,
@@ -167,6 +180,7 @@
 			isa = PBXGroup;
 			children = (
 				DE21EF181FA228A50027F747 /* Reachability.swift */,
+				DE1504481FC30FCD00FC8F61 /* Internet.swift */,
 			);
 			path = Reachability;
 			sourceTree = "<group>";
@@ -313,9 +327,11 @@
 				DE21EEE21FA226400027F747 /* ViewController.swift in Sources */,
 				DEF5451E1FC1F2210004DE3E /* logincheck.swift in Sources */,
 				DEF5451C1FC1F2210004DE3E /* forget_password.swift in Sources */,
+				DE1504491FC30FCD00FC8F61 /* Internet.swift in Sources */,
 				DE21EEE01FA226400027F747 /* AppDelegate.swift in Sources */,
 				DE21EF191FA229200027F747 /* Reachability.swift in Sources */,
 				DE21EF121FA226BD0027F747 /* login.swift in Sources */,
+				DE1504461FC3024800FC8F61 /* usePHP.swift in Sources */,
 				DEF545141FC1F2150004DE3E /* registered.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
