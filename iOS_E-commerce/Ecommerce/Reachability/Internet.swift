@@ -9,11 +9,13 @@
 import Foundation
 import UIKit
 
-let reachability = Reachability()!;
 var anyClass: AnyObject!;
 
+
 class Internet: UIViewController{
-    
+    private let reachability = Reachability()!;
+    private var DynamicView: UIView!;
+
     func ReachabilityInternet() -> Void {
         NotificationCenter.default.addObserver(self, selector: #selector(internetChanged), name: ReachabilityChangedNotification, object: reachability);
         do{
@@ -52,11 +54,12 @@ class Internet: UIViewController{
     //--------------------------------------------------------------------
     
     func buildingVIEW() -> Void {
-        var DynamicView: UIView!;
-        DynamicView = UIView(frame: CGRect(x:0 ,y:-50 ,width:self.view.bounds.size.width ,height: 50));
+        DynamicView = UIView(frame: CGRect(x:0 ,y:50 ,width:self.view.bounds.size.width ,height: 50));
         DynamicView.backgroundColor = UIColor.red;
         DynamicView.alpha = 0.8;
         anyClass.view.addSubview(DynamicView);
+        
+        ReachabilityInternet();
     }
     
     func OnOffLine(_ status: Int) -> Void {
@@ -65,20 +68,20 @@ class Internet: UIViewController{
         if #available(iOS 10.0, *) {
             Timer.scheduledTimer(withTimeInterval: 0.01, repeats:
                 true, block: {(timer) -> Void in
-                    
+    
                     switch(status){
                     case 0:
-                        if anyClass.view.frame.origin.y > 0 {
+                        if  self.DynamicView.frame.origin.y > 0 {
                             timer.invalidate();
                         } else {
-                            anyClass.view.frame = anyClass.view.frame.offsetBy(dx: 0, dy: 1);
+                            self.DynamicView.frame = self.DynamicView.frame.offsetBy(dx: 0, dy: 1);
                         }
                         break;
                     case 1:
-                        if anyClass.view.frame.origin.y < -50 {
+                        if self.DynamicView.frame.origin.y < -50 {
                             timer.invalidate();
                         } else {
-                            anyClass.view.frame = anyClass.view.frame.offsetBy(dx: 0, dy: -1);
+                            self.DynamicView.frame = self.DynamicView.frame.offsetBy(dx: 0, dy: -1);
                         }
                         break;
                     default:
