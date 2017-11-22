@@ -33,7 +33,6 @@ class login: UIViewController, UITextFieldDelegate{
         
         anyClass = self;
         internet.buildingVIEW(); //離線狀態時 秀出警告View
-        internet.ReachabilityInternet(); //檢察網路狀態
         
         showRandom(); //驗證碼
         buildingImg(); //產生ImgClick
