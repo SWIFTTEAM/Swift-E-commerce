@@ -39,6 +39,14 @@
                                                         <nil key="highlightedColor"/>
                                                         <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </label>
+                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hvj-we-Qla">
+                                                        <rect key="frame" x="296" y="26" width="46" height="30"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <connections>
+                                                            <segue destination="zbA-ib-QNL" kind="show" id="8OQ-AN-tY3"/>
+                                                        </connections>
+                                                    </button>
                                                 </subviews>
                                                 <constraints>
                                                     <constraint firstAttribute="trailing" secondItem="jtZ-xs-7h9" secondAttribute="trailing" id="Jp3-SW-5nQ"/>
@@ -500,6 +508,10 @@
                             <constraint firstItem="wDK-Cr-iAH" firstAttribute="top" secondItem="w42-xo-KqL" secondAttribute="bottom" id="o2H-xk-lpb"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="rAccountText" destination="PFG-E0-iZF" id="cid-Gi-CVo"/>
+                        <outlet property="rPasswordText" destination="v7p-jU-egS" id="xEF-qP-sRA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4MR-7G-7gX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -890,6 +902,9 @@
                                                                             <color key="titleColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
                                                                             <color key="titleShadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                                         </state>
+                                                                        <connections>
+                                                                            <action selector="RegisterClick:" destination="Ivw-oi-K9b" eventType="touchUpInside" id="jld-K3-DKV"/>
+                                                                        </connections>
                                                                     </button>
                                                                 </subviews>
                                                                 <constraints>
@@ -968,6 +983,7 @@
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sId-3W-mnJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Ivw-oi-K9b" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="-96" y="14"/>
         </scene>
