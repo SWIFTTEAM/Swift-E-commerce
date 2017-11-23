@@ -163,7 +163,7 @@ class login: UIViewController, UITextFieldDelegate{
         let agreeBool = ImageBool(agreeImg, index: 1);
         if(agreeBool == true){
             
-            Login("login");
+            Login("login"); 
             
         }else{
             showMessage("同意未勾選");
