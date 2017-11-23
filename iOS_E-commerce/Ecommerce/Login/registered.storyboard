@@ -39,14 +39,6 @@
                                                         <nil key="highlightedColor"/>
                                                         <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </label>
-                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B0M-15-Cf6">
-                                                        <rect key="frame" x="292" y="28" width="46" height="30"/>
-                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                        <state key="normal" title="Button"/>
-                                                        <connections>
-                                                            <action selector="regtestclick:" destination="4iV-w7-5n8" eventType="touchUpInside" id="ccu-pi-9yW"/>
-                                                        </connections>
-                                                    </button>
                                                 </subviews>
                                                 <constraints>
                                                     <constraint firstAttribute="trailing" secondItem="jtZ-xs-7h9" secondAttribute="trailing" id="Jp3-SW-5nQ"/>
@@ -527,12 +519,12 @@
                     </items>
                 </toolbar>
             </objects>
-            <point key="canvasLocation" x="-1026.4000000000001" y="13.943028485757123"/>
+            <point key="canvasLocation" x="-1026" y="14"/>
         </scene>
-        <!--Registered_two-->
+        <!--View Controller-->
         <scene sceneID="mPn-ls-Nwe">
             <objects>
-                <viewController id="zbA-ib-QNL" userLabel="Registered_two" sceneMemberID="viewController">
+                <viewController id="zbA-ib-QNL" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="rLZ-Kg-h3g"/>
                         <viewControllerLayoutGuide type="bottom" id="QWv-H1-fbF"/>

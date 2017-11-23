@@ -124,14 +124,14 @@
                                 </constraints>
                             </stackView>
                             <button opaque="NO" alpha="0.85000002384185791" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Fe-RW-2lO" userLabel="login">
-                                <rect key="frame" x="27" y="434.5" width="150" height="61"/>
+                                <rect key="frame" x="27" y="434.5" width="150" height="60.5"/>
                                 <state key="normal" backgroundImage="login"/>
                                 <connections>
                                     <action selector="LogInClick:" destination="arb-f8-XXY" eventType="touchUpInside" id="Uac-oU-XNb"/>
                                 </connections>
                             </button>
                             <button opaque="NO" alpha="0.85000002384185791" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6gb-pR-Rey" userLabel="signup">
-                                <rect key="frame" x="198" y="434.5" width="150" height="61"/>
+                                <rect key="frame" x="198" y="434.5" width="150" height="60.5"/>
                                 <state key="normal" backgroundImage="signup"/>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="版本 1.0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8lx-4Y-feZ">
@@ -141,19 +141,19 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gci-OA-djT" userLabel="Stack View5">
-                                <rect key="frame" x="60" y="525.5" width="255.5" height="33"/>
+                                <rect key="frame" x="60" y="525" width="255.5" height="33.5"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="agree" translatesAutoresizingMaskIntoConstraints="NO" id="dKq-QV-1lG">
-                                        <rect key="frame" x="0.0" y="0.0" width="64" height="33"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="64" height="33.5"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="已閱讀過並同意" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FQf-qN-TpI">
-                                        <rect key="frame" x="64" y="0.0" width="121.5" height="33"/>
+                                        <rect key="frame" x="64" y="0.0" width="121.5" height="33.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.99991279840000002" green="1" blue="0.99988144639999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T7M-QY-9xr">
-                                        <rect key="frame" x="185.5" y="0.0" width="70" height="33"/>
+                                        <rect key="frame" x="185.5" y="0.0" width="70" height="33.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <state key="normal" title="隱私政策">
                                             <color key="titleColor" red="0.99483186010000002" green="0.99179548029999998" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -216,6 +216,7 @@
                         <outlet property="img4" destination="pDX-U3-Nyp" id="DwH-Ag-g99"/>
                         <outlet property="pwText" destination="U7b-px-34p" id="DLH-N5-Y3H"/>
                         <outlet property="rememberImg" destination="Qsn-aC-o7N" id="IwW-LV-eIJ"/>
+                        <outlet property="signup" destination="6gb-pR-Rey" id="xqF-Sd-fTN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HVg-Em-chQ" sceneMemberID="firstResponder"/>

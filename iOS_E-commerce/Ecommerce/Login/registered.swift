@@ -18,25 +18,20 @@ class registered: UIViewController,UITextFieldDelegate {
         super.viewDidLoad();
         
         anyClass = self;
-        
+
         buildingDelegate();
-        print("build ok")
     }
     
-    
-    @IBAction func regtestclick(_ sender: UIButton) {
-        print("go")
+    @IBAction func RegisterClick(_ sender: UIButton) {
         Register("registered");
-        print("go1")
     }
-    
     
     //--------------------------------------------------------------------
     
     func buildingDelegate() -> Void {
         self.rAccountText.delegate = self;
         self.rPasswordText.delegate = self;
-        
+       
     }
     //--------------------------------------------------------------------
     
@@ -68,17 +63,16 @@ class registered: UIViewController,UITextFieldDelegate {
     //--------------------------------------------------------------------
     //登入判斷
     
-    func Register(_ file: String ) -> Void{ 
+    func Register(_ file: String ) -> Void{
         
         let postString = "account=\(rAccountText.text!)&password=\(rPasswordText.text!)";
-        let url = URL(string: "http://192.168.9.129:8080/swiftProject/\(file).php");
+        let url = URL(string: "http://172.20.10.3:8080/swiftProject/\(file).php");
         var request = URLRequest(url: url!);
         request.httpMethod = "POST";
         request.httpBody = postString.data(using: .utf8);
         
         let task = URLSession.shared.dataTask(with: request){
             data , response , error in
-            
             
             guard let data = data else {
                 print(error!);
@@ -92,7 +86,6 @@ class registered: UIViewController,UITextFieldDelegate {
                         let errorStatus = Int(json["errorStatus"]!)!;
                         
                         if (errorStatus == 1){
-                            print("ok")
                             self.showMessage("登入成功");
                         }else if(errorStatus == 2){
                             self.showMessage("帳號或密碼有錯誤");
@@ -112,4 +105,3 @@ class registered: UIViewController,UITextFieldDelegate {
     }
     
 }
-

@@ -25,6 +25,10 @@ class login: UIViewController, UITextFieldDelegate{
     @IBOutlet var pwText: UITextField!;
     @IBOutlet var codeText: UITextField!;
     
+    @IBOutlet weak var signup: UIButton!
+    
+    
+    
     var code: String = "";
     let internet = Internet();
     
@@ -37,6 +41,7 @@ class login: UIViewController, UITextFieldDelegate{
         showRandom(); //驗證碼
         buildingImg(); //產生ImgClick
         buildingDelegate();
+        signup.addTarget(nil, action: #selector(login.goregistered), for: .touchUpInside);
     }
     
     //--------------------------------------------------------------------
@@ -163,7 +168,7 @@ class login: UIViewController, UITextFieldDelegate{
         let agreeBool = ImageBool(agreeImg, index: 1);
         if(agreeBool == true){
             
-            Login("login"); 
+            Login("login");
             
         }else{
             showMessage("同意未勾選");
@@ -253,6 +258,12 @@ class login: UIViewController, UITextFieldDelegate{
             }
         }
         task.resume();
+    }
+    
+    //--------------------------------------------------------------------
+    //進入註冊頁
+    @objc func goregistered() {
+        self.present(registered(), animated: true, completion: nil);
     }
     
     //--------------------------------------------------------------------

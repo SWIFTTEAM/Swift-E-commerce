@@ -1,26 +1,25 @@
 //
-//  forget_password.swift
+//  Forget_Password.swift
 //  Ecommerce
 //
-//  Created by YU on 2017/11/23.
+//  Created by YU on 2017/11/18.
 //  Copyright © 2017年 Ecommerce. All rights reserved.
 //
-import UIKit
-import GameKit
 
-class forget_password: UIViewController,UITextFieldDelegate{
+import UIKit
+
+class Forget_Password: UIViewController,UITextFieldDelegate {
     
-    @IBOutlet weak var account: UITextField!
-    @IBOutlet weak var id: UITextField!
-    @IBOutlet weak var email: UITextField!
     @IBOutlet weak var ok: UIButton!
+    @IBOutlet weak var Email: UITextField!
+    @IBOutlet weak var ID: UITextField!
+    @IBOutlet weak var Account: UITextField!
     
-    var Account : String = "";
-    var Email : String = "";
-    var Id : String = "";
-    var number : Int = 0;
-    var newpassword : String = "";
-    var str : String = "";
+    var account : String = "";
+    var email : String = "";
+    var id : String = "";
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,28 +27,31 @@ class forget_password: UIViewController,UITextFieldDelegate{
         AllDelegate();
         AllTag();
         
+        ok.addTarget(self, action:#selector(okbutton), for:.touchUpInside);
     }
     
-    //===================================================
+    //-----------------------------------------------------------
+    // 設置TAG
+    
+    func AllTag() -> Void {
+        
+        Account.tag = 1;
+        Email.tag = 2;
+        ID.tag = 3;
+        
+    }
+    
+    //-----------------------------------------------------------
     // 委任
     
-    func AllDelegate() {
+    func AllDelegate() -> Void {
         
-        account.delegate = self;
-        id.delegate = self;
-        email.delegate = self;
+        Account.delegate = self;
+        Email.delegate = self;
+        ID.delegate = self;
     }
     
-    //===================================================
-    
-    func AllTag() {
-        
-        account.tag = 1;
-        email.tag = 2;
-        id.tag = 3;
-    }
-    
-    //===================================================
+    //-----------------------------------------------------------
     // 觸控到螢幕,鍵盤控制
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -57,84 +59,68 @@ class forget_password: UIViewController,UITextFieldDelegate{
         self.view.endEditing(true);
     }
     
-    //===================================================
+    //-----------------------------------------------------------
     // 觸控到鍵盤return,鍵盤控制
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         
-        account.resignFirstResponder();
-        email.resignFirstResponder();
-        id.resignFirstResponder();
+        Account.resignFirstResponder();
+        Email.resignFirstResponder();
+        ID.resignFirstResponder();
         
         return(true);
     }
     
-    //===================================================
+    //-----------------------------------------------------------
     // 使用者輸入後抓值
     
     func textFieldDidEndEditing(_ textField: UITextField) {
         
         if(textField.tag == 1){
             
-            textField.text = Account;
+            textField.text = account;
             
         } else if(textField.tag == 2){
             
-            textField.text = Email;
+            textField.text = email;
             
         } else if(textField.tag == 3){
             
-            textField.text = Id;
+            textField.text = id;
             
         } else {
             return;
         }
-        
+       
     }
     
-    //===================================================
-    // 確定要發送認證信
     
     @objc func okbutton(){
         
-        if(Account == "" || Email == "" || Id == ""){
+        if(account == "" || email == "" || id == ""){
             
-            //要記得跳視窗防呆
             print("輸入得值不完整");
             
         } else{
             
-            //這邊要傳送新密碼的信
-            newpassword = newnumber(len: 8);
-            
         }
     }
     
-    //===================================================
-    // 產生亂數密碼
-    
-    func newnumber(len:Int) ->String {
-        
-        str = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
-        var c = Array(str);
-        var s : String = "";
-        
-        for _ in (1...len){
-            s.append(c[Int(arc4random()) % c.count]);
-        }
-        
-        return s;
-        
-    }
-    
-    //未做資料庫連線.傳送email 連線問題 防呆
     
     
+    
+    
+    
+    
+    
+    
+    /*
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         
     }
-    
-    
-    
+     
+    */
+
 }
