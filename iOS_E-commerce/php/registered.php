@@ -19,6 +19,7 @@ if(isset($_POST['account']) && isset($_POST['password'])){
 	
 }else{
 	$results = Array("errorStatus" => "3");
+    
 } 
 
 echo json_encode($results);
