@@ -62,7 +62,7 @@
                                         <rect key="frame" x="85" y="0.0" width="230" height="44.5"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                         <connections>
                                             <outlet property="delegate" destination="arb-f8-XXY" id="CvY-Xh-fWL"/>
                                         </connections>

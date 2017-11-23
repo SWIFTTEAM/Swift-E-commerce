@@ -166,7 +166,6 @@ class login: UIViewController, UITextFieldDelegate{
             Login("login");
             
         }else{
-            
             showMessage("同意未勾選");
             return;
         }
@@ -210,10 +209,9 @@ class login: UIViewController, UITextFieldDelegate{
     //--------------------------------------------------------------------
     //登入判斷
     
-    func Login(_ file: String ) -> Void{
-        
+    func Login(_ file: String) -> Void{
         let postString = "account=\(accountText.text!)&password=\(pwText.text!)";
-        let url = URL(string: "http://172.20.10.3:8080/swiftProject/\(file).php");
+        let url = URL(string: "http://172.20.10.3:8080/php/\(file).php");
         var request = URLRequest(url: url!);
         request.httpMethod = "POST";
         request.httpBody = postString.data(using: .utf8);
