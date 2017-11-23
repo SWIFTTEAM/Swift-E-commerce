@@ -54,7 +54,7 @@ class Internet: UIViewController{
     //--------------------------------------------------------------------
     
     func buildingVIEW() -> Void {
-        DynamicView = UIView(frame: CGRect(x:0 ,y:50 ,width:self.view.bounds.size.width ,height: 50));
+        DynamicView = UIView(frame: CGRect(x:0 ,y:-50 ,width:self.view.bounds.size.width ,height: 50));
         DynamicView.backgroundColor = UIColor.red;
         DynamicView.alpha = 0.8;
         anyClass.view.addSubview(DynamicView);

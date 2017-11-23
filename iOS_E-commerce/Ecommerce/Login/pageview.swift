@@ -57,7 +57,7 @@ class PageViewController: UIPageViewController, UIPageViewControllerDataSource {
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
         
         if let index = list.index(of: viewController), index < list.count - 1 {
-            return list[index + 1];
+            return list[index + 1]; 
         }
         return nil;
         //判斷是否在最後一頁
