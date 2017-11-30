@@ -7,11 +7,13 @@ if(isset($_POST['account']) && isset($_POST['password'])){
 	$account = $_POST['account'];
 	$pw = $_POST['password'];
 	
-	$sql="INSERT INTO `customers`(`CustomerAccount`, `CustomerPassword`) VALUES ('$account','$pw')";
-	$selectS = "SELECT * FROM `Customers` WHERE `CustomerAccount` = '$account' AND `CustomerPassword` = '$pw'";
-	$selectQ = mysql_query($sql) or die(mysql_error());
+	$sql_insert="INSERT INTO `customers`(`CustomerAccount`, `CustomerPassword`) VALUES ('$account','$pw')";
+	$sql_selct = "SELECT * FROM `Customers` WHERE `CustomerAccount` = '$account' ";
 	
-	if(mysql_num_rows($selectQ) == 1){
+	$selectQ = mysql_query($sql_selct) or die(mysql_error());
+	
+	if(mysql_num_rows($selectQ) == 0){
+		mysql_query($sql_insert);
 		$results = Array("errorStatus" => "1");
 	}else{
 		$results = Array("errorStatus" => "2");

@@ -40,11 +40,6 @@ class login: UIViewController, UITextFieldDelegate{
     }
     
     //--------------------------------------------------------------------
-    
-    
-
-    //--------------------------------------------------------------------
-    
     func showRandom() -> Void {
         let show = random(4);
         
@@ -94,7 +89,6 @@ class login: UIViewController, UITextFieldDelegate{
     }
     
     //--------------------------------------------------------------------
-    
     
     @objc func rememberPW() -> Void {
         
@@ -158,13 +152,11 @@ class login: UIViewController, UITextFieldDelegate{
     
     //--------------------------------------------------------------------
     
-    
     @IBAction func LogInClick(_ sender: Any) {
+        
         let agreeBool = ImageBool(agreeImg, index: 1);
         if(agreeBool == true){
-            
-            Login("login"); 
-            
+            Login();
         }else{
             showMessage("同意未勾選");
             return;
@@ -209,59 +201,29 @@ class login: UIViewController, UITextFieldDelegate{
     //--------------------------------------------------------------------
     //登入判斷
     
-    func Login(_ file: String) -> Void{
+    private func Login() -> Void{
+        let phpsql = PHPSQL();
         let postString = "account=\(accountText.text!)&password=\(pwText.text!)";
-        let url = URL(string: "http://172.20.10.3:8080/php/\(file).php");
-        var request = URLRequest(url: url!);
-        request.httpMethod = "POST";
-        request.httpBody = postString.data(using: .utf8);
+        phpsql.postString = postString;
         
-        let task = URLSession.shared.dataTask(with: request){
-            data , response , error in
+        phpsql.PHP_CONNECTION(IP: "172.20.10.3", FileName: "login.php") { (json) in
+            let errorStatus = Int(json["errorStatus"]!)!;
             
-            guard let data = data else {
-                print(error!);
-                return;
-            }
-            
-            do{
-                if let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: String]{
-                    
-                    DispatchQueue.main.async {
-                        let errorStatus = Int(json["errorStatus"]!)!;
-                        
-                        if (errorStatus == 1){
-                            let codeString = self.replacing(self.codeText.text!);
-                            
-                            if (codeString == self.code){
-                                self.showMessage("登入成功");
-                            }else{
-                                self.showMessage("驗證碼錯誤");
-                            }
-                        }else if(errorStatus == 2){
-                            self.showMessage("帳號或密碼有錯誤");
-                        }else if(errorStatus == 3){
-                            self.showMessage("post錯誤");
-                        }
-                    }
-                }
-            } catch let Error {
-                print(Error);
+            if (errorStatus == 1){
+                let codeString = self.replacing(self.codeText.text!);
                 
-                let responseString = String(data: data, encoding: .utf8);
-                print(responseString!);
+                if (codeString == self.code){
+                    self.showMessage("登入成功");
+                }else{
+                    self.showMessage("驗證碼錯誤");
+                }
+            }else if(errorStatus == 2){
+                self.showMessage("帳號或密碼有錯誤");
+            }else if(errorStatus == 3){
+                self.showMessage("post錯誤");
             }
         }
-        task.resume();
     }
-    
-    //--------------------------------------------------------------------
-    //PHP DATABASE CONNECTION
-    
-    
-    
-    
-    
     //--------------------------------------------------------------------
     
     /* override func didReceiveMemoryWarning() {
