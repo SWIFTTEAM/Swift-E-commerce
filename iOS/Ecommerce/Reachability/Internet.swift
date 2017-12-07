@@ -11,7 +11,6 @@ import UIKit
 
 var anyClass: AnyObject!;
 
-
 class Internet: UIViewController{
     private let reachability = Reachability()!;
     private var DynamicView: UIView!;

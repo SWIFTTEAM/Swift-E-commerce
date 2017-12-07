@@ -12,7 +12,7 @@
 		DE1504491FC30FCD00FC8F61 /* Internet.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1504481FC30FCD00FC8F61 /* Internet.swift */; };
 		DE19A5F31FC711BD008A725D /* registered.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE19A5F21FC711BD008A725D /* registered.storyboard */; };
 		DE21EEE01FA226400027F747 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE21EEDF1FA226400027F747 /* AppDelegate.swift */; };
-		DE21EEE21FA226400027F747 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE21EEE11FA226400027F747 /* ViewController.swift */; };
+		DE21EEE21FA226400027F747 /* E_Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE21EEE11FA226400027F747 /* E_Main.swift */; };
 		DE21EEE51FA226400027F747 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE21EEE31FA226400027F747 /* Main.storyboard */; };
 		DE21EEE81FA226400027F747 /* Ecommerce.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DE21EEE61FA226400027F747 /* Ecommerce.xcdatamodeld */; };
 		DE21EEEA1FA226400027F747 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE21EEE91FA226400027F747 /* Assets.xcassets */; };
@@ -22,7 +22,7 @@
 		DE21EF121FA226BD0027F747 /* login.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE21EF111FA226BD0027F747 /* login.swift */; };
 		DE21EF161FA2279B0027F747 /* login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE21EF151FA2279B0027F747 /* login.storyboard */; };
 		DE21EF191FA229200027F747 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE21EF181FA228A50027F747 /* Reachability.swift */; };
-		DE8592F71FCFF67C00329C50 /* PHPSQL.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8592F61FCFF67C00329C50 /* PHPSQL.swift */; };
+		DE599C511FD9869C00A7F23D /* PHPSQL.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE599C501FD9869C00A7F23D /* PHPSQL.swift */; };
 		DEF545141FC1F2150004DE3E /* registered.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF545131FC1F2150004DE3E /* registered.swift */; };
 		DEF5451A1FC1F2210004DE3E /* logincheck.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEF545151FC1F2200004DE3E /* logincheck.storyboard */; };
 		DEF5451C1FC1F2210004DE3E /* forget_password.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF545171FC1F2210004DE3E /* forget_password.swift */; };
@@ -54,7 +54,7 @@
 		DE19A5F21FC711BD008A725D /* registered.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = registered.storyboard; sourceTree = "<group>"; };
 		DE21EEDC1FA226400027F747 /* Ecommerce.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ecommerce.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE21EEDF1FA226400027F747 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		DE21EEE11FA226400027F747 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		DE21EEE11FA226400027F747 /* E_Main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = E_Main.swift; sourceTree = "<group>"; };
 		DE21EEE41FA226400027F747 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DE21EEE71FA226400027F747 /* Ecommerce.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Ecommerce.xcdatamodel; sourceTree = "<group>"; };
 		DE21EEE91FA226400027F747 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -69,7 +69,7 @@
 		DE21EF111FA226BD0027F747 /* login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = login.swift; sourceTree = "<group>"; };
 		DE21EF151FA2279B0027F747 /* login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = login.storyboard; sourceTree = "<group>"; };
 		DE21EF181FA228A50027F747 /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
-		DE8592F61FCFF67C00329C50 /* PHPSQL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PHPSQL.swift; sourceTree = "<group>"; };
+		DE599C501FD9869C00A7F23D /* PHPSQL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PHPSQL.swift; path = phpSql/PHPSQL.swift; sourceTree = SOURCE_ROOT; };
 		DEF545131FC1F2150004DE3E /* registered.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = registered.swift; sourceTree = "<group>"; };
 		DEF545151FC1F2200004DE3E /* logincheck.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = logincheck.storyboard; sourceTree = "<group>"; };
 		DEF545171FC1F2210004DE3E /* forget_password.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = forget_password.swift; sourceTree = "<group>"; };
@@ -102,20 +102,12 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		DE1504441FC3018C00FC8F61 /* phpSql */ = {
-			isa = PBXGroup;
-			children = (
-				DE8592F61FCFF67C00329C50 /* PHPSQL.swift */,
-			);
-			path = phpSql;
-			sourceTree = "<group>";
-		};
 		DE21EED31FA226400027F747 = {
 			isa = PBXGroup;
 			children = (
 				DE21EF101FA2268E0027F747 /* Login */,
-				DE1504441FC3018C00FC8F61 /* phpSql */,
 				DE21EF171FA228790027F747 /* Reachability */,
+				DE968A6F1FD9751900D28F64 /* phpSql */,
 				DE21EEDE1FA226400027F747 /* Ecommerce */,
 				DE21EEF61FA226400027F747 /* EcommerceTests */,
 				DE21EF011FA226400027F747 /* EcommerceUITests */,
@@ -136,8 +128,8 @@
 		DE21EEDE1FA226400027F747 /* Ecommerce */ = {
 			isa = PBXGroup;
 			children = (
+				DE21EEE11FA226400027F747 /* E_Main.swift */,
 				DE21EEDF1FA226400027F747 /* AppDelegate.swift */,
-				DE21EEE11FA226400027F747 /* ViewController.swift */,
 				DE21EEE31FA226400027F747 /* Main.storyboard */,
 				DE21EEE91FA226400027F747 /* Assets.xcassets */,
 				DE21EEEB1FA226400027F747 /* LaunchScreen.storyboard */,
@@ -189,6 +181,15 @@
 				DE1504481FC30FCD00FC8F61 /* Internet.swift */,
 			);
 			path = Reachability;
+			sourceTree = "<group>";
+		};
+		DE968A6F1FD9751900D28F64 /* phpSql */ = {
+			isa = PBXGroup;
+			children = (
+				DE599C501FD9869C00A7F23D /* PHPSQL.swift */,
+			);
+			name = phpSql;
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -331,9 +332,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				DE21EEE81FA226400027F747 /* Ecommerce.xcdatamodeld in Sources */,
-				DE21EEE21FA226400027F747 /* ViewController.swift in Sources */,
+				DE21EEE21FA226400027F747 /* E_Main.swift in Sources */,
 				DEF5451E1FC1F2210004DE3E /* logincheck.swift in Sources */,
-				DE8592F71FCFF67C00329C50 /* PHPSQL.swift in Sources */,
+				DE599C511FD9869C00A7F23D /* PHPSQL.swift in Sources */,
 				DEF5451C1FC1F2210004DE3E /* forget_password.swift in Sources */,
 				DE1504491FC30FCD00FC8F61 /* Internet.swift in Sources */,
 				DE06EF091FC6F58B00735F9D /* pageview.swift in Sources */,

@@ -37,6 +37,8 @@ class login: UIViewController, UITextFieldDelegate{
         showRandom(); //驗證碼
         buildingImg(); //產生ImgClick
         buildingDelegate();
+        
+        
     }
     
     //--------------------------------------------------------------------
@@ -202,11 +204,19 @@ class login: UIViewController, UITextFieldDelegate{
     //登入判斷
     
     private func Login() -> Void{
-        let phpsql = PHPSQL();
-        let postString = "account=\(accountText.text!)&password=\(pwText.text!)";
-        phpsql.postString = postString;
+        let phpsql = E_Main();
         
-        phpsql.PHP_CONNECTION(IP: "172.20.10.3", FileName: "login.php") { (json) in
+        var postarray: [String] = [];
+        postarray.append("account=\(accountText.text!)");
+        postarray.append("password=\(pwText.text!)");
+        
+        let poststring = phpsql.postArrToStr(postarray); // return post
+        phpsql.postContent = poststring;
+         
+        let setIP = Get_IP.ip; // get IP
+        let setFile = Get_Php_Files.login; //get php login file
+        
+        phpsql.PHP_CONNECTION(IP: setIP, FileName: setFile) { (json) in
             let errorStatus = Int(json["errorStatus"]!)!;
             
             if (errorStatus == 1){
