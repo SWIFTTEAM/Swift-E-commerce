@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- 主機: localhost
--- 產生時間： 2017 年 12 月 12 日 09:39
+-- 產生時間： 2017 年 12 月 12 日 17:29
 -- 伺服器版本: 10.1.21-MariaDB
 -- PHP 版本： 5.6.30
 
@@ -30,7 +30,9 @@ CREATE TABLE `Albums` (
   `AlbumID` int(10) NOT NULL,
   `AlbumName` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `CreateTime` datetime NOT NULL,
-  `CreateTimeStamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `CreateTimeStamp` int(15) NOT NULL,
+  `StickyAlbum` tinyint(1) NOT NULL,
+  `Permission` tinyint(1) NOT NULL,
   `CustomerID` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
@@ -55,8 +57,9 @@ CREATE TABLE `Areas` (
 
 CREATE TABLE `Companies` (
   `CompanyID` int(10) NOT NULL,
-  `CompanyName` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
-  `CompanyAddress` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `NameChi` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `NameEng` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `Address` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   `LocalPhone` varchar(15) COLLATE utf8_unicode_ci NOT NULL,
   `FaxPhone` varchar(15) COLLATE utf8_unicode_ci NOT NULL,
   `CreateTime` date NOT NULL,
@@ -111,12 +114,13 @@ CREATE TABLE `Customers` (
   `Identify` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
   `Birth` date NOT NULL,
   `CellPhone` varchar(15) COLLATE utf8_unicode_ci NOT NULL,
+  `CellPhone_Spare` varchar(15) COLLATE utf8_unicode_ci DEFAULT NULL,
   `HomePhone` varchar(15) COLLATE utf8_unicode_ci NOT NULL,
   `ResidenceAddress` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   `MailingAddress` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   `DeliveryAddress` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
   `RegisteredTime` datetime NOT NULL,
-  `RegisteredTimeStamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `RegisteredTimeStamp` int(15) NOT NULL,
   `Sex` enum('1','2') COLLATE utf8_unicode_ci NOT NULL,
   `CountryID` int(10) NOT NULL,
   `CompanyID` int(10) DEFAULT NULL
@@ -126,8 +130,8 @@ CREATE TABLE `Customers` (
 -- 資料表的匯出資料 `Customers`
 --
 
-INSERT INTO `Customers` (`CustomerID`, `Account`, `Password`, `NameChi`, `NameEng`, `Email`, `Identify`, `Birth`, `CellPhone`, `HomePhone`, `ResidenceAddress`, `MailingAddress`, `DeliveryAddress`, `RegisteredTime`, `RegisteredTimeStamp`, `Sex`, `CountryID`, `CompanyID`) VALUES
-(9, 'shijie', 'kiet1234', '黃仕杰', 'Huang Shi-Jie', 'kiettam1234@gamil.com', 'H123456789', '1997-08-20', '0912-345-678', '03-1234567', '330-12 桃園市桃園區嘿嘿街1號', '220-34 新北市板橋區哈哈街2號', '220-56 新北市板橋區嗚嗚街3號', '2017-12-12 16:00:00', '2017-12-12 08:38:16', '1', 886, NULL);
+INSERT INTO `Customers` (`CustomerID`, `Account`, `Password`, `NameChi`, `NameEng`, `Email`, `Identify`, `Birth`, `CellPhone`, `CellPhone_Spare`, `HomePhone`, `ResidenceAddress`, `MailingAddress`, `DeliveryAddress`, `RegisteredTime`, `RegisteredTimeStamp`, `Sex`, `CountryID`, `CompanyID`) VALUES
+(9, 'shijie', 'kiet1234', '黃仕杰', 'Huang Shi-Jie', 'kiettam1234@gamil.com', 'H123456789', '1997-08-20', '0912-345-678', NULL, '03-1234567', '330-12 桃園市桃園區嘿嘿街1號', '220-34 新北市板橋區哈哈街2號', '220-56 新北市板橋區嗚嗚街3號', '2017-12-12 16:00:00', 2147483647, '1', 886, NULL);
 
 -- --------------------------------------------------------
 
@@ -157,6 +161,8 @@ CREATE TABLE `Images` (
   `ImageSize` int(10) NOT NULL,
   `UploadTime` datetime NOT NULL,
   `UploadTimeStamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `StickyImage` tinyint(1) NOT NULL,
+  `Permission` tinyint(1) NOT NULL,
   `AlbumID` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
@@ -220,7 +226,7 @@ ALTER TABLE `Images`
 -- 使用資料表 AUTO_INCREMENT `Albums`
 --
 ALTER TABLE `Albums`
-  MODIFY `AlbumID` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `AlbumID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- 使用資料表 AUTO_INCREMENT `Companies`
 --
