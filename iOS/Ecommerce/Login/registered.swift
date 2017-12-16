@@ -11,8 +11,21 @@ import UIKit
 
 class registered: UIViewController,UITextFieldDelegate {
     
-    @IBOutlet weak var rAccountText: UITextField!
-    @IBOutlet weak var rPasswordText: UITextField!
+    
+    @IBOutlet weak var rAccount: UITextField!
+    @IBOutlet weak var rPassword: UITextField!
+    @IBOutlet weak var rNameChi: UITextField!
+    @IBOutlet weak var rNameEng: UITextField!
+    @IBOutlet weak var rEmail: UITextField!
+    @IBOutlet weak var rIdentify: UITextField!
+    @IBOutlet weak var rCellPhone: UITextField!
+    @IBOutlet weak var rCellPhone_Spare: UITextField!
+    @IBOutlet weak var rHomePhone: UITextField!
+    @IBOutlet weak var rResidenceAddress: UITextField!
+    @IBOutlet weak var rMailingAddress: UITextField!
+    @IBOutlet weak var rDeliveryAddress: UITextField!
+    @IBOutlet weak var rCountryID: UITextField!
+    @IBOutlet weak var rCompanyID: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad();
@@ -26,7 +39,7 @@ class registered: UIViewController,UITextFieldDelegate {
     
     @IBAction func regtestclick(_ sender: UIButton) {
         print("go")
-        Register("registered");
+        register();
         print("go1")
     }
     
@@ -34,8 +47,21 @@ class registered: UIViewController,UITextFieldDelegate {
     //--------------------------------------------------------------------
     
     func buildingDelegate() -> Void {
-        self.rAccountText.delegate = self;
-        self.rPasswordText.delegate = self;
+        self.rAccount.delegate = self;
+        self.rPassword.delegate = self;
+        self.rNameChi.delegate = self;
+        self.rNameEng.delegate = self;
+        self.rIdentify.delegate = self;
+        self.rEmail.delegate = self;
+        self.rCompanyID.delegate = self;
+        self.rCountryID.delegate = self;
+        self.rCellPhone.delegate = self;
+        self.rCellPhone_Spare.delegate = self;
+        self.rHomePhone.delegate = self;
+        self.rMailingAddress.delegate = self;
+        self.rDeliveryAddress.delegate = self;
+        self.rResidenceAddress.delegate = self;
+
         
     }
     //--------------------------------------------------------------------
@@ -59,18 +85,75 @@ class registered: UIViewController,UITextFieldDelegate {
     // 觸控到鍵盤return,在keyboar內
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        rAccountText.resignFirstResponder();
-        rPasswordText.resignFirstResponder();
+        rAccount.resignFirstResponder();
+        rPassword.resignFirstResponder();
+        rNameChi.resignFirstResponder();
+        rNameEng.resignFirstResponder();
+        rIdentify.resignFirstResponder();
+        rEmail.resignFirstResponder();
+        rCompanyID.resignFirstResponder();
+        rCountryID.resignFirstResponder();
+        rCellPhone.resignFirstResponder();
+        rCellPhone_Spare.resignFirstResponder();
+        rHomePhone.resignFirstResponder();
+        rResidenceAddress.resignFirstResponder();
+        rDeliveryAddress.resignFirstResponder();
+        rMailingAddress.resignFirstResponder();
+        
         
         return(true);
     }
     
     //--------------------------------------------------------------------
     //登入判斷
+    private func register() -> Void{
+        let phpsql = E_Main();
+        
+        var postarray: [String] = [];
+        postarray.append("account=\(rAccount.text!)");
+        postarray.append("password=\(rPassword.text!)");
+        postarray.append("namechi=\(rNameChi.text!)");
+        postarray.append("nameeng=\(rNameEng.text!)");
+        postarray.append("email=\(rEmail.text!)");
+        postarray.append("identify=\(rIdentify.text!)");
+        postarray.append("cellphone=\(rCellPhone.text!)");
+        postarray.append("cellphone_spare=\(rCellPhone_Spare.text!)");
+        postarray.append("homephone=\(rHomePhone.text!)");
+        postarray.append("residenceaddress=\(rResidenceAddress.text!)");
+        postarray.append("mailingaddress=\(rMailingAddress.text!)");
+        postarray.append("deliveryaddress=\(rDeliveryAddress.text!)");
+        postarray.append("countryID=\(rCountryID.text!)");
+        postarray.append("companyID=\(rCompanyID.text!)");
+        
+        print(postarray)
+        
+        let poststring = phpsql.postArrToStr(postarray); // return post
+        phpsql.postContent = poststring;
+        
+        let setIP = NSGetValue.IP.ip2; // get IP
+        let setFile =  NSGetValue.Php_Files.register; //get php login file
+        
+        phpsql.PHP_CONNECTION(IP: setIP, FileName: setFile) { (json) in
+            let errorStatus = Int(json["errorStatus"]!)!;
+            
+            if(errorStatus == 2){
+                self.showMessage("帳號已被使用");
+            }else if(errorStatus == 3){
+                self.showMessage("post錯誤");
+            }else if(errorStatus == 4){
+                self.showMessage("註冊成功");
+            }else if(errorStatus == 5){
+                self.showMessage("信箱已被使用");
+            }
+            
+            print(errorStatus)
+        }
+    }
+    
     
     func Register(_ file: String ) -> Void{ 
         
-        let postString = "account=\(rAccountText.text!)&password=\(rPasswordText.text!)";
+        let postString = "account=\(rAccount.text!)&password=\(rPassword.text!)";
         let url = URL(string: "http://172.20.10.3:8080/php/\(file).php");
         var request = URLRequest(url: url!);
         request.httpMethod = "POST";

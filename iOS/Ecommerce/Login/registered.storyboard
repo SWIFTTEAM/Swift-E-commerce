@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="kdn-ya-hqh">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -143,7 +143,7 @@
                                                                         <rect key="frame" x="111.5" y="0.0" width="223.5" height="55.5"/>
                                                                         <subviews>
                                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2op-2I-hkR">
-                                                                                <rect key="frame" x="8" y="13" width="153" height="30"/>
+                                                                                <rect key="frame" x="7.5" y="13" width="153" height="30"/>
                                                                                 <nil key="textColor"/>
                                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                                 <textInputTraits key="textInputTraits"/>
@@ -1108,6 +1108,9 @@
                                                                                     <color key="titleColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
                                                                                     <color key="titleShadowColor" white="0.66666666669999997" alpha="1" colorSpace="calibratedWhite"/>
                                                                                 </state>
+                                                                                <connections>
+                                                                                    <action selector="regtestclick:" destination="kdn-ya-hqh" eventType="touchUpInside" id="7du-lu-TS8"/>
+                                                                                </connections>
                                                                             </button>
                                                                         </subviews>
                                                                         <constraints>
@@ -1263,6 +1266,22 @@
                         </constraints>
                     </view>
                     <size key="freeformSize" width="375" height="1000"/>
+                    <connections>
+                        <outlet property="rAccount" destination="VPv-9O-CHE" id="sJT-Ea-3jF"/>
+                        <outlet property="rCellPhone" destination="g8Y-oH-n9P" id="hS3-Ik-Qi6"/>
+                        <outlet property="rCellPhone_Spare" destination="aNY-8G-OYd" id="pjx-QT-9s5"/>
+                        <outlet property="rCompanyID" destination="mJ3-Iy-bnJ" id="5GA-mw-5n3"/>
+                        <outlet property="rCountryID" destination="mBF-H8-ry9" id="QTT-wk-Umd"/>
+                        <outlet property="rDeliveryAddress" destination="v4W-EY-aoC" id="xDg-QK-kfh"/>
+                        <outlet property="rEmail" destination="HqL-X9-9ws" id="7Ty-PA-hoP"/>
+                        <outlet property="rHomePhone" destination="0br-vV-yYL" id="FFN-wn-KZg"/>
+                        <outlet property="rIdentify" destination="veE-Eb-4wU" id="rYO-0C-fex"/>
+                        <outlet property="rMailingAddress" destination="adH-rk-TbB" id="02n-Oc-ESw"/>
+                        <outlet property="rNameChi" destination="zhb-Xn-TAm" id="SJF-Hb-Aei"/>
+                        <outlet property="rNameEng" destination="4im-Ok-Ywm" id="Rmq-83-f8m"/>
+                        <outlet property="rPassword" destination="2op-2I-hkR" id="x0F-Z6-5kc"/>
+                        <outlet property="rResidenceAddress" destination="P4t-Fk-U2d" id="9yA-IW-jde"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wdE-fw-4fT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
