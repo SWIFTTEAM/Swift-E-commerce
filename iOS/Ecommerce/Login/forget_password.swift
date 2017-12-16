@@ -13,7 +13,7 @@ class forget_password: UIViewController,UITextFieldDelegate{
     @IBOutlet weak var account: UITextField!
     @IBOutlet weak var id: UITextField!
     @IBOutlet weak var email: UITextField!
-    @IBOutlet weak var ok: UIButton!
+    @IBOutlet weak var get_newpassword: UIButton!
     
     var Account : String = "";
     var Email : String = "";
@@ -47,6 +47,18 @@ class forget_password: UIViewController,UITextFieldDelegate{
         account.tag = 1;
         email.tag = 2;
         id.tag = 3;
+    }
+    
+    //===================================================
+    //顯示訊息
+    
+    func showMessage(_ string: String) -> Void {
+        
+        let myAlert: UIAlertController = UIAlertController(title: "System Messgae", message: string, preferredStyle: .alert);
+        let action = UIAlertAction(title: "關閉", style: UIAlertActionStyle.default, handler: {action in print("done")});
+        myAlert.addAction(action);
+        self.present(myAlert, animated: true, completion: nil);
+        
     }
     
     //===================================================
@@ -94,21 +106,22 @@ class forget_password: UIViewController,UITextFieldDelegate{
     
     //===================================================
     // 確定要發送認證信
-    
-    @objc func okbutton(){
+
+    @IBAction func get_newpassword(_ sender: Any) {
         
-        if(Account == "" || Email == "" || Id == ""){
+        if(Account.isEmpty == true || Email.isEmpty == true || Id.isEmpty == true){
             
-            //要記得跳視窗防呆
-            print("輸入得值不完整");
+            self.showMessage("輸入值不完整");
+            print("NONO");
             
         } else{
             
-            //這邊要傳送新密碼的信
-            newpassword = newnumber(len: 8);
+            confirm(); //驗證身份
+            print("OKOK")
             
         }
     }
+    
     
     //===================================================
     // 產生亂數密碼
@@ -127,7 +140,45 @@ class forget_password: UIViewController,UITextFieldDelegate{
         
     }
     
-    //未做資料庫連線.傳送email 連線問題 防呆
+    //===================================================
+    // 資料庫連線判斷資料完整
+    
+    private func confirm() -> Void{
+        let phpsql = E_Main();
+        
+        var postarray: [String] = [];
+        postarray.append("account=\(Account)");
+        postarray.append("email=\(Email)");
+        postarray.append("id=\(Id)");
+        
+        let poststring = phpsql.postArrToStr(postarray); // return post
+        phpsql.postContent = poststring;
+        
+        let setIP = Get_IP.ip; // 抓IP位置
+        let setFile = Get_Php_Files.forget_password //get php login file
+        
+        phpsql.PHP_CONNECTION(IP: setIP, FileName: setFile) { (json) in
+            let errorStatus = Int(json["errorStatus"]!)!;
+            
+            if (errorStatus == 1){
+                
+                self.showMessage("身份確認成功！");
+                self.newpassword = self.newnumber(len: 8); //身份驗證成功後產生一組亂碼
+                print(self.newpassword);
+                
+            }else if(errorStatus == 2){
+                
+                self.showMessage("輸入資料有誤，請重新輸入");
+                
+            }else if(errorStatus == 3){
+                
+                self.showMessage("POST錯誤");
+            }
+        }
+    }
+    
+    
+    //未做傳送email 防呆
     
     
     override func didReceiveMemoryWarning() {
