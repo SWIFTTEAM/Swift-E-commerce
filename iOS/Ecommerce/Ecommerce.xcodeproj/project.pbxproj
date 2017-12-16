@@ -22,7 +22,15 @@
 		DE21EF121FA226BD0027F747 /* login.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE21EF111FA226BD0027F747 /* login.swift */; };
 		DE21EF161FA2279B0027F747 /* login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE21EF151FA2279B0027F747 /* login.storyboard */; };
 		DE21EF191FA229200027F747 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE21EF181FA228A50027F747 /* Reachability.swift */; };
-		DE599C511FD9869C00A7F23D /* PHPSQL.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE599C501FD9869C00A7F23D /* PHPSQL.swift */; };
+		DE6CC01D1FE270D50073FEE5 /* bannerUseScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6CC01C1FE270D50073FEE5 /* bannerUseScrollView.swift */; };
+		DE7127DF1FE247ED0021CAE8 /* PHPSQL.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7127DE1FE247ED0021CAE8 /* PHPSQL.swift */; };
+		DE7127E21FE2487E0021CAE8 /* index.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7127E11FE2487E0021CAE8 /* index.swift */; };
+		DE7127E41FE248AA0021CAE8 /* index.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE7127E31FE248AA0021CAE8 /* index.storyboard */; };
+		DE7127E61FE269210021CAE8 /* BannerUseScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7127E51FE269210021CAE8 /* BannerUseScrollViewController.swift */; };
+		DE7127EB1FE269C90021CAE8 /* 0.png in Resources */ = {isa = PBXBuildFile; fileRef = DE7127EA1FE269C90021CAE8 /* 0.png */; };
+		DE7127ED1FE269D20021CAE8 /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = DE7127EC1FE269D20021CAE8 /* 1.png */; };
+		DE7127EF1FE269D60021CAE8 /* 2.png in Resources */ = {isa = PBXBuildFile; fileRef = DE7127EE1FE269D60021CAE8 /* 2.png */; };
+		DE7127F11FE269DB0021CAE8 /* 3.png in Resources */ = {isa = PBXBuildFile; fileRef = DE7127F01FE269DA0021CAE8 /* 3.png */; };
 		DEF545141FC1F2150004DE3E /* registered.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF545131FC1F2150004DE3E /* registered.swift */; };
 		DEF5451A1FC1F2210004DE3E /* logincheck.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEF545151FC1F2200004DE3E /* logincheck.storyboard */; };
 		DEF5451C1FC1F2210004DE3E /* forget_password.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF545171FC1F2210004DE3E /* forget_password.swift */; };
@@ -69,7 +77,15 @@
 		DE21EF111FA226BD0027F747 /* login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = login.swift; sourceTree = "<group>"; };
 		DE21EF151FA2279B0027F747 /* login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = login.storyboard; sourceTree = "<group>"; };
 		DE21EF181FA228A50027F747 /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
-		DE599C501FD9869C00A7F23D /* PHPSQL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PHPSQL.swift; path = phpSql/PHPSQL.swift; sourceTree = SOURCE_ROOT; };
+		DE6CC01C1FE270D50073FEE5 /* bannerUseScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bannerUseScrollView.swift; sourceTree = "<group>"; };
+		DE7127DE1FE247ED0021CAE8 /* PHPSQL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PHPSQL.swift; sourceTree = "<group>"; };
+		DE7127E11FE2487E0021CAE8 /* index.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = index.swift; sourceTree = "<group>"; };
+		DE7127E31FE248AA0021CAE8 /* index.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = index.storyboard; sourceTree = "<group>"; };
+		DE7127E51FE269210021CAE8 /* BannerUseScrollViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BannerUseScrollViewController.swift; sourceTree = "<group>"; };
+		DE7127EA1FE269C90021CAE8 /* 0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 0.png; sourceTree = "<group>"; };
+		DE7127EC1FE269D20021CAE8 /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = "<group>"; };
+		DE7127EE1FE269D60021CAE8 /* 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2.png; sourceTree = "<group>"; };
+		DE7127F01FE269DA0021CAE8 /* 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 3.png; sourceTree = "<group>"; };
 		DEF545131FC1F2150004DE3E /* registered.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = registered.swift; sourceTree = "<group>"; };
 		DEF545151FC1F2200004DE3E /* logincheck.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = logincheck.storyboard; sourceTree = "<group>"; };
 		DEF545171FC1F2210004DE3E /* forget_password.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = forget_password.swift; sourceTree = "<group>"; };
@@ -105,9 +121,11 @@
 		DE21EED31FA226400027F747 = {
 			isa = PBXGroup;
 			children = (
+				DE7127E71FE2695D0021CAE8 /* Banner */,
 				DE21EF101FA2268E0027F747 /* Login */,
+				DE7127E01FE248250021CAE8 /* Index */,
+				DE7127DD1FE247DE0021CAE8 /* phpSql */,
 				DE21EF171FA228790027F747 /* Reachability */,
-				DE968A6F1FD9751900D28F64 /* phpSql */,
 				DE21EEDE1FA226400027F747 /* Ecommerce */,
 				DE21EEF61FA226400027F747 /* EcommerceTests */,
 				DE21EF011FA226400027F747 /* EcommerceUITests */,
@@ -183,13 +201,34 @@
 			path = Reachability;
 			sourceTree = "<group>";
 		};
-		DE968A6F1FD9751900D28F64 /* phpSql */ = {
+		DE7127DD1FE247DE0021CAE8 /* phpSql */ = {
 			isa = PBXGroup;
 			children = (
-				DE599C501FD9869C00A7F23D /* PHPSQL.swift */,
+				DE7127DE1FE247ED0021CAE8 /* PHPSQL.swift */,
 			);
-			name = phpSql;
-			path = "New Group";
+			path = phpSql;
+			sourceTree = "<group>";
+		};
+		DE7127E01FE248250021CAE8 /* Index */ = {
+			isa = PBXGroup;
+			children = (
+				DE7127E11FE2487E0021CAE8 /* index.swift */,
+				DE7127E31FE248AA0021CAE8 /* index.storyboard */,
+			);
+			path = Index;
+			sourceTree = "<group>";
+		};
+		DE7127E71FE2695D0021CAE8 /* Banner */ = {
+			isa = PBXGroup;
+			children = (
+				DE7127EA1FE269C90021CAE8 /* 0.png */,
+				DE7127EC1FE269D20021CAE8 /* 1.png */,
+				DE7127EE1FE269D60021CAE8 /* 2.png */,
+				DE7127F01FE269DA0021CAE8 /* 3.png */,
+				DE7127E51FE269210021CAE8 /* BannerUseScrollViewController.swift */,
+				DE6CC01C1FE270D50073FEE5 /* bannerUseScrollView.swift */,
+			);
+			path = Banner;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -299,13 +338,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE7127ED1FE269D20021CAE8 /* 1.png in Resources */,
 				DE21EF161FA2279B0027F747 /* login.storyboard in Resources */,
 				DEF5451A1FC1F2210004DE3E /* logincheck.storyboard in Resources */,
 				DE19A5F31FC711BD008A725D /* registered.storyboard in Resources */,
 				DE06EF071FC6F57B00735F9D /* pageview.storyboard in Resources */,
 				DE21EEED1FA226400027F747 /* LaunchScreen.storyboard in Resources */,
+				DE7127EF1FE269D60021CAE8 /* 2.png in Resources */,
 				DE21EEEA1FA226400027F747 /* Assets.xcassets in Resources */,
+				DE7127F11FE269DB0021CAE8 /* 3.png in Resources */,
+				DE7127EB1FE269C90021CAE8 /* 0.png in Resources */,
 				DE21EEE51FA226400027F747 /* Main.storyboard in Resources */,
+				DE7127E41FE248AA0021CAE8 /* index.storyboard in Resources */,
 				DEF5451D1FC1F2210004DE3E /* forget_password.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -333,12 +377,15 @@
 			files = (
 				DE21EEE81FA226400027F747 /* Ecommerce.xcdatamodeld in Sources */,
 				DE21EEE21FA226400027F747 /* E_Main.swift in Sources */,
+				DE7127E21FE2487E0021CAE8 /* index.swift in Sources */,
+				DE6CC01D1FE270D50073FEE5 /* bannerUseScrollView.swift in Sources */,
 				DEF5451E1FC1F2210004DE3E /* logincheck.swift in Sources */,
-				DE599C511FD9869C00A7F23D /* PHPSQL.swift in Sources */,
+				DE7127DF1FE247ED0021CAE8 /* PHPSQL.swift in Sources */,
 				DEF5451C1FC1F2210004DE3E /* forget_password.swift in Sources */,
 				DE1504491FC30FCD00FC8F61 /* Internet.swift in Sources */,
 				DE06EF091FC6F58B00735F9D /* pageview.swift in Sources */,
 				DE21EEE01FA226400027F747 /* AppDelegate.swift in Sources */,
+				DE7127E61FE269210021CAE8 /* BannerUseScrollViewController.swift in Sources */,
 				DE21EF191FA229200027F747 /* Reachability.swift in Sources */,
 				DE21EF121FA226BD0027F747 /* login.swift in Sources */,
 				DEF545141FC1F2150004DE3E /* registered.swift in Sources */,

@@ -213,8 +213,8 @@ class login: UIViewController, UITextFieldDelegate{
         let poststring = phpsql.postArrToStr(postarray); // return post
         phpsql.postContent = poststring;
          
-        let setIP = Get_IP.ip; // get IP
-        let setFile = Get_Php_Files.login; //get php login file
+        let setIP = NSGetValue.IP.ip; // get IP
+        let setFile =  NSGetValue.Php_Files.login; //get php login file
         
         phpsql.PHP_CONNECTION(IP: setIP, FileName: setFile) { (json) in
             let errorStatus = Int(json["errorStatus"]!)!;

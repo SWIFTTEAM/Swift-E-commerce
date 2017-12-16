@@ -9,13 +9,15 @@
 import UIKit
 
 //-------------------------------------------------------------------------------
-struct Get_IP {
-    static let ip: String = "192.168.1.103";
-}
-
-//-------------------------------------------------------------------------------
-struct Get_Php_Files {
-    static let login: String = "login.php";
+/// Get Value
+public class NSGetValue {
+    struct IP {
+        static let ip: String = "192.168.1.103";
+    }
+    
+    struct Php_Files {
+        static let login: String = "login.php";
+    }
 }
 
 //-------------------------------------------------------------------------------
