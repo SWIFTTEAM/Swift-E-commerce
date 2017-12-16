@@ -130,8 +130,8 @@ class registered: UIViewController,UITextFieldDelegate {
         let poststring = phpsql.postArrToStr(postarray); // return post
         phpsql.postContent = poststring;
         
-        let setIP = NSGetValue.IP.ip2; // get IP
-        let setFile =  NSGetValue.Php_Files.register; //get php login file
+        let setIP = NSGetValue.IP.ip; // get IP
+        let setFile =  NSGetValue.Php_Files.register; //get php register file
         
         phpsql.PHP_CONNECTION(IP: setIP, FileName: setFile) { (json) in
             let errorStatus = Int(json["errorStatus"]!)!;

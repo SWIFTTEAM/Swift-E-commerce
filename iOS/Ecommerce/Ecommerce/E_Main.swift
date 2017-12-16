@@ -16,6 +16,7 @@ public class NSGetValue {
     
     struct Php_Files {
         static let login: String = "login.php";
+        static let register: String = "register.php";
     }
 }
 
