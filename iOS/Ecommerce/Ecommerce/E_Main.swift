@@ -8,23 +8,32 @@
 
 import UIKit
 
-//-------------------------------------------------------------------------------
-/// Get Value
+///==================================Get Value=============================================
 public class NSGetValue {
     struct IP {
-        static let ip: String = "192.168.1.103";
-        static let ip2: String = "192.168.9.129";//zinfu
+        static let ip: String = "172.20.10.9";
     }
     
     struct Php_Files {
         static let login: String = "login.php";
-        static let register: String = "registered2.php";//zinfu
     }
 }
 
-//-------------------------------------------------------------------------------
-/// NSPHP
+///==================================PHP=============================================
 class E_Main: PHPSQL{
     var postContent: String = "";
 };
+
+
+///==================================showMessage=============================================
+
+public func showMessage(UI: UIViewController, _ string: String) -> Void {
+    
+    let myAlert: UIAlertController = UIAlertController(title: "System Messgae", message: string, preferredStyle: .alert);
+    let action = UIAlertAction(title: "關閉", style: UIAlertActionStyle.default, handler: {action in print("done")});
+    myAlert.addAction(action);
+    UI.present(myAlert, animated: true, completion: nil);
+}
+
+
 

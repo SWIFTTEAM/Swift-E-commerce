@@ -41,9 +41,9 @@ extension PHPSQL{
             
             guard let data = data else {
                 print(error!);
-                return;
+                return ;
             }
-            
+        
             do{
                 if let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: String]{
                     DispatchQueue.main.async {

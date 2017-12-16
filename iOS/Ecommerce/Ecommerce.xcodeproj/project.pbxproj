@@ -31,6 +31,7 @@
 		DE7127ED1FE269D20021CAE8 /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = DE7127EC1FE269D20021CAE8 /* 1.png */; };
 		DE7127EF1FE269D60021CAE8 /* 2.png in Resources */ = {isa = PBXBuildFile; fileRef = DE7127EE1FE269D60021CAE8 /* 2.png */; };
 		DE7127F11FE269DB0021CAE8 /* 3.png in Resources */ = {isa = PBXBuildFile; fileRef = DE7127F01FE269DA0021CAE8 /* 3.png */; };
+		DECFA4E51FE548F20070DF69 /* product.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DECFA4E41FE548F20070DF69 /* product.storyboard */; };
 		DEF545141FC1F2150004DE3E /* registered.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF545131FC1F2150004DE3E /* registered.swift */; };
 		DEF5451A1FC1F2210004DE3E /* logincheck.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEF545151FC1F2200004DE3E /* logincheck.storyboard */; };
 		DEF5451C1FC1F2210004DE3E /* forget_password.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF545171FC1F2210004DE3E /* forget_password.swift */; };
@@ -86,6 +87,7 @@
 		DE7127EC1FE269D20021CAE8 /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = "<group>"; };
 		DE7127EE1FE269D60021CAE8 /* 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2.png; sourceTree = "<group>"; };
 		DE7127F01FE269DA0021CAE8 /* 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 3.png; sourceTree = "<group>"; };
+		DECFA4E41FE548F20070DF69 /* product.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = product.storyboard; sourceTree = "<group>"; };
 		DEF545131FC1F2150004DE3E /* registered.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = registered.swift; sourceTree = "<group>"; };
 		DEF545151FC1F2200004DE3E /* logincheck.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = logincheck.storyboard; sourceTree = "<group>"; };
 		DEF545171FC1F2210004DE3E /* forget_password.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = forget_password.swift; sourceTree = "<group>"; };
@@ -214,6 +216,7 @@
 			children = (
 				DE7127E11FE2487E0021CAE8 /* index.swift */,
 				DE7127E31FE248AA0021CAE8 /* index.storyboard */,
+				DECFA4E41FE548F20070DF69 /* product.storyboard */,
 			);
 			path = Index;
 			sourceTree = "<group>";
@@ -342,6 +345,7 @@
 				DE21EF161FA2279B0027F747 /* login.storyboard in Resources */,
 				DEF5451A1FC1F2210004DE3E /* logincheck.storyboard in Resources */,
 				DE19A5F31FC711BD008A725D /* registered.storyboard in Resources */,
+				DECFA4E51FE548F20070DF69 /* product.storyboard in Resources */,
 				DE06EF071FC6F57B00735F9D /* pageview.storyboard in Resources */,
 				DE21EEED1FA226400027F747 /* LaunchScreen.storyboard in Resources */,
 				DE7127EF1FE269D60021CAE8 /* 2.png in Resources */,

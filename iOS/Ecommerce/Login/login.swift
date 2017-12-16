@@ -37,8 +37,6 @@ class login: UIViewController, UITextFieldDelegate{
         showRandom(); //驗證碼
         buildingImg(); //產生ImgClick
         buildingDelegate();
-        
-        
     }
     
     //--------------------------------------------------------------------
@@ -160,7 +158,7 @@ class login: UIViewController, UITextFieldDelegate{
         if(agreeBool == true){
             Login();
         }else{
-            showMessage("同意未勾選");
+            showMessage(UI: self,"同意未勾選");
             return;
         }
     }
@@ -169,17 +167,6 @@ class login: UIViewController, UITextFieldDelegate{
         
         let stringTo = string.replacingOccurrences(of: " ", with: "");
         return stringTo;
-        
-    }
-    
-    //--------------------------------------------------------------------
-    
-    func showMessage(_ string: String) -> Void {
-        
-        let myAlert: UIAlertController = UIAlertController(title: "System Messgae", message: string, preferredStyle: .alert);
-        let action = UIAlertAction(title: "關閉", style: UIAlertActionStyle.default, handler: {action in print("done")});
-        myAlert.addAction(action);
-        self.present(myAlert, animated: true, completion: nil);
         
     }
     
@@ -223,14 +210,14 @@ class login: UIViewController, UITextFieldDelegate{
                 let codeString = self.replacing(self.codeText.text!);
                 
                 if (codeString == self.code){
-                    self.showMessage("登入成功");
+                    showMessage(UI: self,"登入成功");
                 }else{
-                    self.showMessage("驗證碼錯誤");
+                    showMessage(UI: self,"驗證碼錯誤");
                 }
             }else if(errorStatus == 2){
-                self.showMessage("帳號或密碼有錯誤");
+                showMessage(UI: self,"帳號或密碼有錯誤");
             }else if(errorStatus == 3){
-                self.showMessage("post錯誤");
+                showMessage(UI: self,"post錯誤");
             }
         }
     }
