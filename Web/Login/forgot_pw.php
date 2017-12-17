@@ -7,16 +7,101 @@
 </head>
 
 <body>
-  <center>
+<style>
+#ontopDiv {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    z-index: 10000;
+    background-color: #4ebeba;
+    
+    padding: 15px;
+    font-size: 48px;
+	font-family:"微軟正黑體";
+	color:#FFF;
+}
+#login {
+  position: absolute;
+  top: 60px;
+  right: 10px;
+  width: 150px;
+  height: 50px;
+  text-align:center;
+  font-size:14px;
+  font-family:"微軟正黑體";
+}
+#article {
+  position:relative;
+  top: 100px;
+  left:280px;
+  width:60%;
+  border-width: 1px;
+  border-style:solid;
+  border-radius:10px;
+  border-color:#CCC;
+  font-family:"微軟正黑體";
+}
+#category {
+  position: absolute;
+  top:100px;
+  left: 0px;
+  background-color:	#F8F8FF;
+  width: 150px;
+  height: 300px;
+  border-width: 1px;
+  border-style:solid;
+  border-radius:10px;
+  border-color:#F0F8FF;
+  text-align:center;
+  font-family:"微軟正黑體";
+}
+#top10 {
+  position: absolute;
+  top:100px;
+  right: 0px;
+  background-color:	#F8F8FF;
+  width: 150px;
+  height: 300px;
+  border-width: 1px;
+  border-style:solid;
+  border-radius:10px;
+  border-color:#F0F8FF;
+  text-align:center;
+  font-family:"微軟正黑體";
+}
+a {
+	text-decoration:none;
+}
+
+</style>
+<div id="ontopDiv" >
+  Peng.
+  <div id="login">
+  <a href="111" style="color:#FFF">註冊</a>  |  
+  <a href="111" style="color:#FFF">登入</a>
+  </div>
+</div>
+<div id="category">
+ 商品分類
+ <hr color="#5CA8B6" size="1px"/>
+ <a href="111" style="color:#000">男裝</a>
+</div>
+<div id="article">
  <?php
     include('connect_db.php');
- ?> 
- <div style="font-size:large; font-family:Microsoft JhengHei; 
-             background-color:#AAAAAA;">忘記密碼
- </div> 
+ ?>
 
+ <center>
+ 忘記密碼
+ 
+ <p>
+ <font size="-1">若您忘記密碼，請填寫以下資料，將於資料比對無誤後，將臨時密碼發送至您註冊的電子郵件信箱</font>
+ <p>
+ 
  <form method="post" action="forgot_pw.php">
-  <p>
+ 
     帳號：
     <input name="account" type="text"/><p>
     信箱：
@@ -27,6 +112,8 @@
     &nbsp; 
      <input type="button" name="cancel" value="取消"/>
   </form>
+  </center>
+  </p>
   <?php
    error_reporting(0);
    $_SESSION['account']=$_POST['account'];
@@ -35,7 +122,8 @@
    ?>
    
    <?php
-   if($_SESSION['account'] != NULL && $_SESSION['mail'] != NULL && $_SESSION['identity'] != NULL){
+   if($_SESSION['account'] != NULL && $_SESSION['mail'] != NULL &&  
+      $_SESSION['identity'] != NULL){
 	   if(!ctype_alnum($_SESSION['account']) ||
 		  !ctype_alnum($_SESSION['identity'])){
 		  }
@@ -56,8 +144,12 @@
    
    
    ?>
+   </div>
+ <div id="top10">
+ 熱搜商品TOP10
+ <hr color="#5CA8B6" size="1px"/>
+ <a href="111" style="color:#000">男裝</a>
+</div>  
    
-   
-  </center>
 </body>
 </html>
