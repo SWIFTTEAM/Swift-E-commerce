@@ -8,7 +8,8 @@
 
 import UIKit
 
-///==================================Get Value=============================================
+///=================================Get Value=================================
+
 public class NSGetValue {
     struct IP {
         static let ip: String = "172.20.10.9";
@@ -17,16 +18,18 @@ public class NSGetValue {
     struct Php_Files {
         static let login: String = "login.php";
         static let register: String = "register.php";
+        static let forget_password: String = "forget_password.php";
+        static let checkpassword: String = "checkpassword.php";
     }
 }
 
-///==================================PHP=============================================
+///=================================PHP=================================
+
 class E_Main: PHPSQL{
     var postContent: String = "";
 };
 
-
-///==================================showMessage=============================================
+///=================================showMessage=================================
 
 public func showMessage(UI: UIViewController, _ string: String) -> Void {
     

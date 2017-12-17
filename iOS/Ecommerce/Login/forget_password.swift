@@ -50,18 +50,6 @@ class forget_password: UIViewController,UITextFieldDelegate{
     }
     
     //===================================================
-    //顯示訊息
-    
-    func showMessage(_ string: String) -> Void {
-        
-        let myAlert: UIAlertController = UIAlertController(title: "System Messgae", message: string, preferredStyle: .alert);
-        let action = UIAlertAction(title: "關閉", style: UIAlertActionStyle.default, handler: {action in print("done")});
-        myAlert.addAction(action);
-        self.present(myAlert, animated: true, completion: nil);
-        
-    }
-    
-    //===================================================
     // 觸控到螢幕,鍵盤控制
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -111,7 +99,7 @@ class forget_password: UIViewController,UITextFieldDelegate{
         
         if(Account.isEmpty == true || Email.isEmpty == true || Id.isEmpty == true){
             
-            self.showMessage("輸入值不完整");
+            showMessage(UI: self,"輸入值不完整");
             print("NONO");
             
         } else{
@@ -154,25 +142,25 @@ class forget_password: UIViewController,UITextFieldDelegate{
         let poststring = phpsql.postArrToStr(postarray); // return post
         phpsql.postContent = poststring;
         
-        let setIP = Get_IP.ip; // 抓IP位置
-        let setFile = Get_Php_Files.forget_password //get php login file
+        let setIP = NSGetValue.IP.ip; // 抓IP位置
+        let setFile = NSGetValue.Php_Files.forget_password ; //get php forget_password file
         
         phpsql.PHP_CONNECTION(IP: setIP, FileName: setFile) { (json) in
             let errorStatus = Int(json["errorStatus"]!)!;
             
             if (errorStatus == 1){
                 
-                self.showMessage("身份確認成功！");
+                showMessage(UI: self,"身份確認成功！");
                 self.newpassword = self.newnumber(len: 8); //身份驗證成功後產生一組亂碼
                 print(self.newpassword);
                 
             }else if(errorStatus == 2){
                 
-                self.showMessage("輸入資料有誤，請重新輸入");
+                showMessage(UI: self,"輸入資料有誤，請重新輸入");
                 
             }else if(errorStatus == 3){
                 
-                self.showMessage("POST錯誤");
+                showMessage(UI: self,"POST錯誤");
             }
         }
     }

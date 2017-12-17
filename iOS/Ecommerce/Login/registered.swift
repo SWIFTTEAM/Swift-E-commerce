@@ -64,16 +64,6 @@ class registered: UIViewController,UITextFieldDelegate {
 
         
     }
-    //--------------------------------------------------------------------
-    
-    func showMessage(_ string: String) -> Void {
-        
-        let myAlert: UIAlertController = UIAlertController(title: "System Messgae", message: string, preferredStyle: .alert);
-        let action = UIAlertAction(title: "關閉", style: UIAlertActionStyle.default, handler: {action in print("done")});
-        myAlert.addAction(action);
-        self.present(myAlert, animated: true, completion: nil);
-        
-    }
     
     //--------------------------------------------------------------------
     // 觸控到螢幕,超出keyboar
@@ -137,13 +127,13 @@ class registered: UIViewController,UITextFieldDelegate {
             let errorStatus = Int(json["errorStatus"]!)!;
             
             if(errorStatus == 2){
-                self.showMessage("帳號已被使用");
+                showMessage(UI: self,"帳號已被使用");
             }else if(errorStatus == 3){
-                self.showMessage("post錯誤");
+                showMessage(UI: self,"post錯誤");
             }else if(errorStatus == 4){
-                self.showMessage("註冊成功");
+                showMessage(UI: self,"註冊成功");
             }else if(errorStatus == 5){
-                self.showMessage("信箱已被使用");
+                showMessage(UI: self,"信箱已被使用");
             }
             
             print(errorStatus)
@@ -175,11 +165,11 @@ class registered: UIViewController,UITextFieldDelegate {
                         
                         if (errorStatus == 1){
                             print("ok")
-                            self.showMessage("註冊成功");
+                            showMessage(UI: self,"註冊成功");
                         }else if(errorStatus == 2){
-                            self.showMessage("帳號已被使用");
+                            showMessage(UI: self,"帳號已被使用");
                         }else if(errorStatus == 3){
-                            self.showMessage("post錯誤");
+                            showMessage(UI: self,"post錯誤");
                         }
                     }
                 }

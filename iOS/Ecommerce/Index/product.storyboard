@@ -87,7 +87,7 @@
                                         <state key="normal" backgroundImage="question"/>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lke-DF-zyi">
-                                        <rect key="frame" x="150.66666666666666" y="5" width="45" height="45"/>
+                                        <rect key="frame" x="151" y="5" width="45" height="45"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="lke-DF-zyi" secondAttribute="height" multiplier="1:1" id="Jxi-tJ-KAc"/>
                                         </constraints>
