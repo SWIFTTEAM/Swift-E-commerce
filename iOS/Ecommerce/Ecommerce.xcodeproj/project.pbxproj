@@ -33,6 +33,8 @@
 		DE7127F11FE269DB0021CAE8 /* 3.png in Resources */ = {isa = PBXBuildFile; fileRef = DE7127F01FE269DA0021CAE8 /* 3.png */; };
 		DECFA4E51FE548F20070DF69 /* product.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DECFA4E41FE548F20070DF69 /* product.storyboard */; };
 		DEE11F2A1FE903B00048A654 /* CoreDataConnect.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE11F291FE903B00048A654 /* CoreDataConnect.swift */; };
+		DEE11F2F1FE986580048A654 /* shopcart.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE11F2E1FE986580048A654 /* shopcart.swift */; };
+		DEE11F311FE986970048A654 /* memberprofile.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE11F301FE986970048A654 /* memberprofile.swift */; };
 		DEF545141FC1F2150004DE3E /* registered.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF545131FC1F2150004DE3E /* registered.swift */; };
 		DEF5451C1FC1F2210004DE3E /* forget_password.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF545171FC1F2210004DE3E /* forget_password.swift */; };
 		DEF5451D1FC1F2210004DE3E /* forget_password.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEF545181FC1F2210004DE3E /* forget_password.storyboard */; };
@@ -88,6 +90,8 @@
 		DE7127F01FE269DA0021CAE8 /* 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 3.png; sourceTree = "<group>"; };
 		DECFA4E41FE548F20070DF69 /* product.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = product.storyboard; sourceTree = "<group>"; };
 		DEE11F291FE903B00048A654 /* CoreDataConnect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataConnect.swift; sourceTree = "<group>"; };
+		DEE11F2E1FE986580048A654 /* shopcart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = shopcart.swift; sourceTree = "<group>"; };
+		DEE11F301FE986970048A654 /* memberprofile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = memberprofile.swift; sourceTree = "<group>"; };
 		DEF545131FC1F2150004DE3E /* registered.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = registered.swift; sourceTree = "<group>"; };
 		DEF545171FC1F2210004DE3E /* forget_password.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = forget_password.swift; sourceTree = "<group>"; };
 		DEF545181FC1F2210004DE3E /* forget_password.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = forget_password.storyboard; sourceTree = "<group>"; };
@@ -252,6 +256,7 @@
 		DEE11F2C1FE974CC0048A654 /* ShopCart */ = {
 			isa = PBXGroup;
 			children = (
+				DEE11F2E1FE986580048A654 /* shopcart.swift */,
 			);
 			path = ShopCart;
 			sourceTree = "<group>";
@@ -259,6 +264,7 @@
 		DEE11F2D1FE97B100048A654 /* MemberCentre */ = {
 			isa = PBXGroup;
 			children = (
+				DEE11F301FE986970048A654 /* memberprofile.swift */,
 			);
 			path = MemberCentre;
 			sourceTree = "<group>";
@@ -414,6 +420,8 @@
 				DEE11F2A1FE903B00048A654 /* CoreDataConnect.swift in Sources */,
 				DE7127DF1FE247ED0021CAE8 /* PHPSQL.swift in Sources */,
 				DEF5451C1FC1F2210004DE3E /* forget_password.swift in Sources */,
+				DEE11F311FE986970048A654 /* memberprofile.swift in Sources */,
+				DEE11F2F1FE986580048A654 /* shopcart.swift in Sources */,
 				DE1504491FC30FCD00FC8F61 /* Internet.swift in Sources */,
 				DE06EF091FC6F58B00735F9D /* pageview.swift in Sources */,
 				DE21EEE01FA226400027F747 /* AppDelegate.swift in Sources */,
