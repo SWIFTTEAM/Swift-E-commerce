@@ -32,11 +32,10 @@
 		DE7127EF1FE269D60021CAE8 /* 2.png in Resources */ = {isa = PBXBuildFile; fileRef = DE7127EE1FE269D60021CAE8 /* 2.png */; };
 		DE7127F11FE269DB0021CAE8 /* 3.png in Resources */ = {isa = PBXBuildFile; fileRef = DE7127F01FE269DA0021CAE8 /* 3.png */; };
 		DECFA4E51FE548F20070DF69 /* product.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DECFA4E41FE548F20070DF69 /* product.storyboard */; };
+		DEE11F2A1FE903B00048A654 /* CoreDataConnect.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE11F291FE903B00048A654 /* CoreDataConnect.swift */; };
 		DEF545141FC1F2150004DE3E /* registered.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF545131FC1F2150004DE3E /* registered.swift */; };
-		DEF5451A1FC1F2210004DE3E /* logincheck.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEF545151FC1F2200004DE3E /* logincheck.storyboard */; };
 		DEF5451C1FC1F2210004DE3E /* forget_password.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF545171FC1F2210004DE3E /* forget_password.swift */; };
 		DEF5451D1FC1F2210004DE3E /* forget_password.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEF545181FC1F2210004DE3E /* forget_password.storyboard */; };
-		DEF5451E1FC1F2210004DE3E /* logincheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF545191FC1F2210004DE3E /* logincheck.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,11 +87,10 @@
 		DE7127EE1FE269D60021CAE8 /* 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2.png; sourceTree = "<group>"; };
 		DE7127F01FE269DA0021CAE8 /* 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 3.png; sourceTree = "<group>"; };
 		DECFA4E41FE548F20070DF69 /* product.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = product.storyboard; sourceTree = "<group>"; };
+		DEE11F291FE903B00048A654 /* CoreDataConnect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataConnect.swift; sourceTree = "<group>"; };
 		DEF545131FC1F2150004DE3E /* registered.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = registered.swift; sourceTree = "<group>"; };
-		DEF545151FC1F2200004DE3E /* logincheck.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = logincheck.storyboard; sourceTree = "<group>"; };
 		DEF545171FC1F2210004DE3E /* forget_password.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = forget_password.swift; sourceTree = "<group>"; };
 		DEF545181FC1F2210004DE3E /* forget_password.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = forget_password.storyboard; sourceTree = "<group>"; };
-		DEF545191FC1F2210004DE3E /* logincheck.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = logincheck.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,12 +121,13 @@
 		DE21EED31FA226400027F747 = {
 			isa = PBXGroup;
 			children = (
-				DE7127E71FE2695D0021CAE8 /* Banner */,
 				DE21EF101FA2268E0027F747 /* Login */,
 				DE7127E01FE248250021CAE8 /* Index */,
+				DE21EEDE1FA226400027F747 /* Ecommerce */,
+				DEE11F281FE9039C0048A654 /* CoreData */,
+				DE7127E71FE2695D0021CAE8 /* Banner */,
 				DE7127DD1FE247DE0021CAE8 /* phpSql */,
 				DE21EF171FA228790027F747 /* Reachability */,
-				DE21EEDE1FA226400027F747 /* Ecommerce */,
 				DE21EEF61FA226400027F747 /* EcommerceTests */,
 				DE21EF011FA226400027F747 /* EcommerceUITests */,
 				DE21EEDD1FA226400027F747 /* Products */,
@@ -186,8 +185,6 @@
 				DE19A5F21FC711BD008A725D /* registered.storyboard */,
 				DEF545171FC1F2210004DE3E /* forget_password.swift */,
 				DEF545181FC1F2210004DE3E /* forget_password.storyboard */,
-				DEF545191FC1F2210004DE3E /* logincheck.swift */,
-				DEF545151FC1F2200004DE3E /* logincheck.storyboard */,
 				DE06EF081FC6F58B00735F9D /* pageview.swift */,
 				DE06EF061FC6F57B00735F9D /* pageview.storyboard */,
 			);
@@ -232,6 +229,14 @@
 				DE6CC01C1FE270D50073FEE5 /* bannerUseScrollView.swift */,
 			);
 			path = Banner;
+			sourceTree = "<group>";
+		};
+		DEE11F281FE9039C0048A654 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				DEE11F291FE903B00048A654 /* CoreDataConnect.swift */,
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -343,7 +348,6 @@
 			files = (
 				DE7127ED1FE269D20021CAE8 /* 1.png in Resources */,
 				DE21EF161FA2279B0027F747 /* login.storyboard in Resources */,
-				DEF5451A1FC1F2210004DE3E /* logincheck.storyboard in Resources */,
 				DE19A5F31FC711BD008A725D /* registered.storyboard in Resources */,
 				DECFA4E51FE548F20070DF69 /* product.storyboard in Resources */,
 				DE06EF071FC6F57B00735F9D /* pageview.storyboard in Resources */,
@@ -383,7 +387,7 @@
 				DE21EEE21FA226400027F747 /* E_Main.swift in Sources */,
 				DE7127E21FE2487E0021CAE8 /* index.swift in Sources */,
 				DE6CC01D1FE270D50073FEE5 /* bannerUseScrollView.swift in Sources */,
-				DEF5451E1FC1F2210004DE3E /* logincheck.swift in Sources */,
+				DEE11F2A1FE903B00048A654 /* CoreDataConnect.swift in Sources */,
 				DE7127DF1FE247ED0021CAE8 /* PHPSQL.swift in Sources */,
 				DEF5451C1FC1F2210004DE3E /* forget_password.swift in Sources */,
 				DE1504491FC30FCD00FC8F61 /* Internet.swift in Sources */,
@@ -566,6 +570,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks $(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = "E-commerce.Ecommerce";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -583,6 +588,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks $(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = "E-commerce.Ecommerce";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

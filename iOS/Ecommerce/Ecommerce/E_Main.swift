@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 ///=================================Get Value=================================
 
@@ -27,6 +28,15 @@ public class NSGetValue {
 
 class E_Main: PHPSQL{
     var postContent: String = "";
+};
+
+///=================================CoreData=================================
+
+class E_CoreData: CoreDataConnect{
+    var myContext: NSManagedObjectContext
+    required init(context:NSManagedObjectContext) {
+        self.myContext = context
+    }
 };
 
 ///=================================showMessage=================================
