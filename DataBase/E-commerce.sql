@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- 主機: localhost
--- 產生時間： 2017 年 12 月 19 日 13:44
+-- 產生時間： 2017 年 12 月 19 日 18:33
 -- 伺服器版本: 10.1.21-MariaDB
 -- PHP 版本： 5.6.30
 
@@ -554,6 +554,18 @@ CREATE TABLE `Departments` (
 -- --------------------------------------------------------
 
 --
+-- 資料表結構 `FollowProducts`
+--
+
+CREATE TABLE `FollowProducts` (
+  `FollowID` int(10) NOT NULL,
+  `ProductID` int(10) NOT NULL,
+  `CustomerID` int(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
 -- 資料表結構 `Images`
 --
 
@@ -567,6 +579,57 @@ CREATE TABLE `Images` (
   `StickyImage` tinyint(1) NOT NULL,
   `Permission` tinyint(1) NOT NULL,
   `AlbumID` int(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- 資料表結構 `Permissions`
+--
+
+CREATE TABLE `Permissions` (
+  `PermissionsID＿AI` int(10) NOT NULL,
+  `Path` enum('Message','QRCode') COLLATE utf8_unicode_ci NOT NULL,
+  `Status` tinyint(1) NOT NULL,
+  `CustomerID` int(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- 資料表結構 `PolicyContent`
+--
+
+CREATE TABLE `PolicyContent` (
+  `PolicyID` int(11) NOT NULL,
+  `Content` mediumtext COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- 資料表結構 `Products`
+--
+
+CREATE TABLE `Products` (
+  `ProductID` int(10) NOT NULL,
+  `Name` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `Price` int(10) NOT NULL,
+  `PictureName` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `LikeNum` int(10) NOT NULL,
+  `SortID` int(10) NOT NULL,
+  `CustomerID` int(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- 資料表結構 `Sorts`
+--
+
+CREATE TABLE `Sorts` (
+  `SortID` int(10) NOT NULL,
+  `Name` varchar(50) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
@@ -616,10 +679,40 @@ ALTER TABLE `Departments`
   ADD PRIMARY KEY (`DepartmentID`);
 
 --
+-- 資料表索引 `FollowProducts`
+--
+ALTER TABLE `FollowProducts`
+  ADD PRIMARY KEY (`FollowID`);
+
+--
 -- 資料表索引 `Images`
 --
 ALTER TABLE `Images`
   ADD PRIMARY KEY (`ImageID`);
+
+--
+-- 資料表索引 `Permissions`
+--
+ALTER TABLE `Permissions`
+  ADD PRIMARY KEY (`PermissionsID＿AI`);
+
+--
+-- 資料表索引 `PolicyContent`
+--
+ALTER TABLE `PolicyContent`
+  ADD PRIMARY KEY (`PolicyID`);
+
+--
+-- 資料表索引 `Products`
+--
+ALTER TABLE `Products`
+  ADD PRIMARY KEY (`ProductID`);
+
+--
+-- 資料表索引 `Sorts`
+--
+ALTER TABLE `Sorts`
+  ADD PRIMARY KEY (`SortID`);
 
 --
 -- 在匯出的資料表使用 AUTO_INCREMENT
@@ -646,10 +739,35 @@ ALTER TABLE `Counties`
 ALTER TABLE `Customers`
   MODIFY `CustomerID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 --
+-- 使用資料表 AUTO_INCREMENT `FollowProducts`
+--
+ALTER TABLE `FollowProducts`
+  MODIFY `FollowID` int(10) NOT NULL AUTO_INCREMENT;
+--
 -- 使用資料表 AUTO_INCREMENT `Images`
 --
 ALTER TABLE `Images`
   MODIFY `ImageID` int(10) NOT NULL AUTO_INCREMENT;
+--
+-- 使用資料表 AUTO_INCREMENT `Permissions`
+--
+ALTER TABLE `Permissions`
+  MODIFY `PermissionsID＿AI` int(10) NOT NULL AUTO_INCREMENT;
+--
+-- 使用資料表 AUTO_INCREMENT `PolicyContent`
+--
+ALTER TABLE `PolicyContent`
+  MODIFY `PolicyID` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- 使用資料表 AUTO_INCREMENT `Products`
+--
+ALTER TABLE `Products`
+  MODIFY `ProductID` int(10) NOT NULL AUTO_INCREMENT;
+--
+-- 使用資料表 AUTO_INCREMENT `Sorts`
+--
+ALTER TABLE `Sorts`
+  MODIFY `SortID` int(10) NOT NULL AUTO_INCREMENT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
