@@ -17,6 +17,7 @@ class index: UIViewController, UISearchBarDelegate {
         
         searchBar.delegate = self;
         
+        
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {

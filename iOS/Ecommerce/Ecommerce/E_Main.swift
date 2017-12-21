@@ -33,9 +33,9 @@ class E_Main: PHPSQL{
 ///=================================CoreData=================================
 
 class E_CoreData: CoreDataConnect{
-    var myContext: NSManagedObjectContext
+    var myContext: NSManagedObjectContext;
     required init(context:NSManagedObjectContext) {
-        self.myContext = context
+        self.myContext = context;
     }
 };
 
