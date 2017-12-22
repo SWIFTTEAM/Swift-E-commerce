@@ -46,27 +46,30 @@
                                         <state key="normal" backgroundImage="shopping-cart"/>
                                     </button>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="56" id="UL5-A5-SAn"/>
+                                </constraints>
                                 <edgeInsets key="layoutMargins" top="13" left="18" bottom="8" right="18"/>
                             </stackView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mVt-kF-8iG">
                                 <rect key="frame" x="0.0" y="76" width="414" height="1069"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HR4-uf-85d" userLabel="productView">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KqC-zu-JJw">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="414"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" secondItem="HR4-uf-85d" secondAttribute="height" multiplier="1:1" id="aQX-0J-XaH"/>
+                                            <constraint firstAttribute="width" secondItem="KqC-zu-JJw" secondAttribute="height" multiplier="1:1" id="ihf-gT-pFk"/>
                                         </constraints>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" red="0.9999127984046936" green="1" blue="0.99988144636154175" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" red="0.9999127984046936" green="1" blue="0.99988144636154175" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="HR4-uf-85d" secondAttribute="trailing" id="23i-VE-01x"/>
-                                    <constraint firstItem="HR4-uf-85d" firstAttribute="top" secondItem="mVt-kF-8iG" secondAttribute="top" id="NaT-yi-2ZL"/>
-                                    <constraint firstItem="HR4-uf-85d" firstAttribute="leading" secondItem="mVt-kF-8iG" secondAttribute="leading" id="NzX-YL-bh4"/>
-                                    <constraint firstItem="HR4-uf-85d" firstAttribute="width" secondItem="mVt-kF-8iG" secondAttribute="width" id="d0z-aG-hJW"/>
-                                    <constraint firstAttribute="bottom" secondItem="HR4-uf-85d" secondAttribute="bottom" constant="189" id="evy-Ac-SOR"/>
+                                    <constraint firstItem="KqC-zu-JJw" firstAttribute="centerX" secondItem="mVt-kF-8iG" secondAttribute="centerX" id="LBk-UC-DHZ"/>
+                                    <constraint firstAttribute="trailing" secondItem="KqC-zu-JJw" secondAttribute="trailing" id="kgn-9L-31d"/>
+                                    <constraint firstItem="KqC-zu-JJw" firstAttribute="top" secondItem="mVt-kF-8iG" secondAttribute="top" id="vRv-tZ-abB"/>
+                                    <constraint firstItem="KqC-zu-JJw" firstAttribute="leading" secondItem="mVt-kF-8iG" secondAttribute="leading" id="wHR-lJ-fCB"/>
+                                    <constraint firstAttribute="bottom" secondItem="KqC-zu-JJw" secondAttribute="bottom" constant="839" id="yHD-Y4-GiT"/>
                                 </constraints>
                             </scrollView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="Dno-yf-vFB" userLabel="Stack List">
@@ -87,21 +90,21 @@
                                         <state key="normal" backgroundImage="question"/>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z93-Q9-NLD">
-                                        <rect key="frame" x="151" y="5" width="40.666666666666657" height="45"/>
+                                        <rect key="frame" x="151" y="5" width="41" height="45"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="z93-Q9-NLD" secondAttribute="height" multiplier="1:1.1" id="ixw-WN-1oL"/>
                                         </constraints>
                                         <state key="normal" backgroundImage="addLike"/>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M9i-gp-2mg">
-                                        <rect key="frame" x="221.33333333333334" y="5" width="41.000000000000028" height="45"/>
+                                        <rect key="frame" x="221.66666666666666" y="5" width="40.999999999999972" height="45"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="M9i-gp-2mg" secondAttribute="height" multiplier="1:1.1" id="LvJ-ct-6cD"/>
                                         </constraints>
                                         <state key="normal" backgroundImage="addCart"/>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z9f-N1-Ja2">
-                                        <rect key="frame" x="291.66666666666669" y="5" width="112.33333333333331" height="45"/>
+                                        <rect key="frame" x="292" y="5" width="112" height="45"/>
                                         <color key="backgroundColor" red="0.0" green="0.54117647059999996" blue="0.54117647059999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="Z9f-N1-Ja2" secondAttribute="height" multiplier="2.5:1" id="26W-8L-NG0"/>
@@ -111,6 +114,7 @@
                                     </button>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="WT0-wu-Bwt"/>
                                     <constraint firstItem="z93-Q9-NLD" firstAttribute="width" secondItem="z93-Q9-NLD" secondAttribute="height" multiplier="1:1.1" id="jPH-vR-wz0"/>
                                     <constraint firstItem="M9i-gp-2mg" firstAttribute="width" secondItem="M9i-gp-2mg" secondAttribute="height" multiplier="1:1.1" id="prN-b4-JHq"/>
                                     <constraint firstItem="hgS-oE-NYu" firstAttribute="width" secondItem="hgS-oE-NYu" secondAttribute="height" multiplier="1:1.1" id="yyL-RF-euY"/>
@@ -121,11 +125,9 @@
                         <color key="backgroundColor" red="0.30588235289999999" green="0.74509803919999995" blue="0.72941176470000002" alpha="0.8495023545" colorSpace="custom" customColorSpace="displayP3"/>
                         <color key="tintColor" red="0.9999127984046936" green="1" blue="0.99988144636154175" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="mVt-kF-8iG" firstAttribute="bottom" secondItem="HKx-XA-yUH" secondAttribute="bottom" constant="-55" id="61z-07-MKZ"/>
                             <constraint firstItem="mVt-kF-8iG" firstAttribute="top" secondItem="iqD-wF-ndW" secondAttribute="bottom" id="7Qn-W7-hTz"/>
                             <constraint firstItem="iqD-wF-ndW" firstAttribute="trailing" secondItem="HKx-XA-yUH" secondAttribute="trailing" id="8pS-E6-9bl"/>
                             <constraint firstItem="Dno-yf-vFB" firstAttribute="leading" secondItem="HKx-XA-yUH" secondAttribute="leading" id="Les-iN-ZvS"/>
-                            <constraint firstItem="mVt-kF-8iG" firstAttribute="top" secondItem="HKx-XA-yUH" secondAttribute="top" constant="56" id="NfM-02-o1h"/>
                             <constraint firstItem="mVt-kF-8iG" firstAttribute="trailing" secondItem="HKx-XA-yUH" secondAttribute="trailing" id="Quw-ON-HOh"/>
                             <constraint firstItem="iqD-wF-ndW" firstAttribute="leading" secondItem="HKx-XA-yUH" secondAttribute="leading" id="XpX-12-HHC"/>
                             <constraint firstItem="iqD-wF-ndW" firstAttribute="top" secondItem="HKx-XA-yUH" secondAttribute="top" id="Xsp-Xc-4KP"/>
@@ -140,7 +142,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eSo-1S-knD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="594.375" y="-297.5"/>
+            <point key="canvasLocation" x="594.20289855072474" y="-297.554347826087"/>
         </scene>
     </scenes>
     <resources>
