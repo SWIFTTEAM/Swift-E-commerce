@@ -27,6 +27,11 @@ class registered: UIViewController,UITextFieldDelegate {
     @IBOutlet weak var rCountryID: UITextField!
     @IBOutlet weak var rCompanyID: UITextField!
     
+    @IBOutlet weak var Bdate: UIDatePicker!
+    @IBOutlet weak var Spicker: UIPickerView!
+    
+    var Birth:String!
+    
     override func viewDidLoad() {
         super.viewDidLoad();
         
@@ -64,6 +69,16 @@ class registered: UIViewController,UITextFieldDelegate {
 
         
     }
+    //--------------------------------------------------------------------
+    
+    func showMessage(_ string: String) -> Void {
+        
+        let myAlert: UIAlertController = UIAlertController(title: "System Messgae", message: string, preferredStyle: .alert);
+        let action = UIAlertAction(title: "關閉", style: UIAlertActionStyle.default, handler: {action in print("done")});
+        myAlert.addAction(action);
+        self.present(myAlert, animated: true, completion: nil);
+        
+    }
     
     //--------------------------------------------------------------------
     // 觸控到螢幕,超出keyboar
@@ -93,11 +108,27 @@ class registered: UIViewController,UITextFieldDelegate {
         
         return(true);
     }
+    //--------------------------------------------------------------------
+    //date
+    private func DatetoStr() -> Void{
+        let date = Bdate.date
+        
+        // 创建一个日期格式器
+        let dformatter = DateFormatter()
+        // 为日期格式器设置格式字符串
+        dformatter.dateFormat = "dd/MM/yyyy"
+        // 使用日期格式器格式化日期、时间
+        Birth = dformatter.string(from: date)
+        print(Birth)
+        //Birth=datestr
+    }
     
     //--------------------------------------------------------------------
     //登入判斷
     private func register() -> Void{
         let phpsql = E_Main();
+        
+        DatetoStr();
         
         var postarray: [String] = [];
         postarray.append("account=\(rAccount.text!)");
@@ -106,6 +137,7 @@ class registered: UIViewController,UITextFieldDelegate {
         postarray.append("nameeng=\(rNameEng.text!)");
         postarray.append("email=\(rEmail.text!)");
         postarray.append("identify=\(rIdentify.text!)");
+        postarray.append("birth=\(Birth)");
         postarray.append("cellphone=\(rCellPhone.text!)");
         postarray.append("cellphone_spare=\(rCellPhone_Spare.text!)");
         postarray.append("homephone=\(rHomePhone.text!)");
@@ -120,20 +152,20 @@ class registered: UIViewController,UITextFieldDelegate {
         let poststring = phpsql.postArrToStr(postarray); // return post
         phpsql.postContent = poststring;
         
-        let setIP = NSGetValue.IP.ip; // get IP
-        let setFile =  NSGetValue.Php_Files.register; //get php register file
+        let setIP = NSGetValue.IP.ip2; // get IP
+        let setFile =  NSGetValue.Php_Files.register; //get php login file
         
         phpsql.PHP_CONNECTION(IP: setIP, FileName: setFile) { (json) in
             let errorStatus = Int(json["errorStatus"]!)!;
             
             if(errorStatus == 2){
-                showMessage(UI: self,"帳號已被使用");
+                self.showMessage("帳號已被使用");
             }else if(errorStatus == 3){
-                showMessage(UI: self,"post錯誤");
+                self.showMessage("post錯誤");
             }else if(errorStatus == 4){
-                showMessage(UI: self,"註冊成功");
+                self.showMessage("註冊成功");
             }else if(errorStatus == 5){
-                showMessage(UI: self,"信箱已被使用");
+                self.showMessage("信箱已被使用");
             }
             
             print(errorStatus)
@@ -165,11 +197,11 @@ class registered: UIViewController,UITextFieldDelegate {
                         
                         if (errorStatus == 1){
                             print("ok")
-                            showMessage(UI: self,"註冊成功");
+                            self.showMessage("註冊成功");
                         }else if(errorStatus == 2){
-                            showMessage(UI: self,"帳號已被使用");
+                            self.showMessage("帳號已被使用");
                         }else if(errorStatus == 3){
-                            showMessage(UI: self,"post錯誤");
+                            self.showMessage("post錯誤");
                         }
                     }
                 }
