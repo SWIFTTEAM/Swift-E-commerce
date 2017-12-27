@@ -171,13 +171,13 @@ class login: UIViewController, UITextFieldDelegate{
     }
     
     //--------------------------------------------------------------------
-    // 觸控到螢幕,超出keyboar
+    // 觸控到螢幕,超出keyboard
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true);
     }
     
     //--------------------------------------------------------------------
-    // 觸控到鍵盤return,在keyboar內
+    // 觸控到鍵盤return,在keyboard內
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         accountText.resignFirstResponder();
@@ -204,7 +204,10 @@ class login: UIViewController, UITextFieldDelegate{
         let setFile =  NSGetValue.Php_Files.login; //get php login file
         
         phpsql.PHP_CONNECTION(IP: setIP, FileName: setFile) { (json) in
-            let errorStatus = Int(json["errorStatus"]!)!;
+            
+            var ToObjectArray: [String: AnyObject] = [:];
+            ToObjectArray = json[0] as! [String : AnyObject] ;
+            let errorStatus = Int(ToObjectArray["errorStatus"]! as! String)!;
             
             if (errorStatus == 1){
                 let codeString = self.replacing(self.codeText.text!);

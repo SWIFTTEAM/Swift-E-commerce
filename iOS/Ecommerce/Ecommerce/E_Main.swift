@@ -21,6 +21,7 @@ public class NSGetValue {
         static let register: String = "register.php";
         static let forget_password: String = "forget_password.php";
         static let checkpassword: String = "checkpassword.php";
+        static let index: String = "Index/index.php";
     }
 }
 

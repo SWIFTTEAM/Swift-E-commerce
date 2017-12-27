@@ -12,7 +12,7 @@ import UIKit
 protocol PHPSQL {
     var postContent: String { get set };
     func postArrToStr(_ postArray: [String]) -> String;
-    func PHP_CONNECTION(IP: String , FileName: String , content:@escaping (_ json: [String: String]) -> Void) -> Void;
+    func PHP_CONNECTION(IP: String , FileName: String , content:@escaping (_ json: NSArray) -> Void) -> Void;
 }
 extension PHPSQL{
     func postArrToStr(_ postArray: [String]) -> String{
@@ -29,7 +29,7 @@ extension PHPSQL{
         return str;
     }
     
-    func PHP_CONNECTION(IP: String , FileName: String , content:@escaping (_ json: [String: String]) -> Void) -> Void {
+    func PHP_CONNECTION(IP: String , FileName: String , content:@escaping (_ json: NSArray) -> Void) -> Void {
         
         let url = URL(string: "http://\(IP):8080/E-iOSphp/\(FileName)");
         var request = URLRequest(url: url!);
@@ -45,10 +45,9 @@ extension PHPSQL{
             }
         
             do{
-                if let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: String]{
-                    DispatchQueue.main.async {
-                        content(json);
-                    }
+                let json = try JSONSerialization.jsonObject(with: data, options: []) as! NSArray;
+                DispatchQueue.main.async {
+                    content(json);
                 }
             } catch let Error {
                 print("PHP Connection error：\(Error)");
