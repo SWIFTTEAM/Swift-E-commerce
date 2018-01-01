@@ -9,17 +9,20 @@ if(isset($_POST['account']) && isset($_POST['password'])){
 	$NameChi = $_POST['namechi'];
 	$NameEng = $_POST['nameeng'];
 	$Email=$_POST['email'];
-	$Identify=$_POST['identity'];
+	$Identify=$_POST['identify'];
 	$Birth=$_POST['birth'];
 	$CellPhone=$_POST['cellphone'];
 	$CellPhone_spare=$_POST['cellphone_spare'];
 	$HomePhone=$_POST['homephone'];
-	$ResidenceAddress=$_POST['residenaddress'];
+	$ResidenceAddress=$_POST['residenceaddress'];
 	$MailingAddress=$_POST['mailingaddress'];
-	$DeliveryAddress=$_POST['deliveryaddress'];
+	//$DeliveryAddress=$_POST['deliveryaddress'];
 	$Sex=$_POST['sex'];
 	$CountryID=$_POST['countryid'];
 	$CompanyID=$_POST['companyid'];
+    
+    $RegisteredTimeStamp=time();
+    
     
     $time = strtotime($Birth);
     
@@ -31,10 +34,10 @@ if(isset($_POST['account']) && isset($_POST['password'])){
     $RegisteredTime=$datetime;
     //$RegisteredTimeStamp=UNIX_TIMESTAMP($datetime);
     
-	$sql_insert="INSERT INTO `customers`( `Account`, `Password`, `NameChi`, `NameEng`, `Email`, `Identify`, `Birth`, `CellPhone`, `CellPhone_Spare`, `HomePhone`, `ResidenceAddress`, `MailingAddress`, `DeliveryAddress`, `RegisteredTime`, `RegisteredTimeStamp`, `Sex`, `CountryID`, `CompanyID`)
+	$sql_insert="INSERT INTO `customers`( `Account`, `Password`, `NameChi`, `NameEng`, `Email`, `Identify`, `Birth`, `CellPhone`, `CellPhone_Spare`, `HomePhone`, `ResidenceAddress`, `MailingAddress`, `RegisteredTime`, `RegisteredTimeStamp`, `Sex`, `CountryID`, `CompanyID`)
   VALUES  ('".$Account."','".$Password."','".$NameChi."','".$NameEng."','".$Email."','".$Identify."',
   '".$newformat."','".$CellPhone."','".$CellPhone_spare."','".$HomePhone."','".$ResidenceAddress."'
- ,'".$MailingAddress."','".$DeliveryAddress."','".$RegisteredTime."','".$RegisteredTimeStamp."','".$Sex."','".$CountryID."','".$CompanyID."')";;
+ ,'".$MailingAddress."','".$RegisteredTime."','".$RegisteredTimeStamp."','".$Sex."','".$CountryID."','".$CompanyID."')";;
 
 
 	

@@ -59,12 +59,26 @@ class registered: UIViewController,UITextFieldDelegate,UIPickerViewDelegate{
     
     @IBAction func regtestclick(_ sender: UIButton) {
         print("go")
-        
-        
+        /*getBirth()
+        print(Birth!)
+        getSexValue()
+        print(Sex!)
+        getCountryValue()
+        print(Country!)*/
         register();
         print("go1")
     }
     
+
+    @IBAction func CheckAddressSame(_ sender: UISwitch) {
+        
+        if rAddressSame.isOn {
+            rMailingAddress1.text! = rResidenceAddress1.text!
+            rMailingAddress2.text! = rResidenceAddress2.text!
+            rMailingAddress3.text! = rResidenceAddress3.text!
+        }
+        
+    }
     
     //--------------------------------------------------------------------
     
@@ -139,7 +153,7 @@ class registered: UIViewController,UITextFieldDelegate,UIPickerViewDelegate{
     }
     //--------------------------------------------------------------------
     //date
-    private func DatetoStr() -> Void{
+    private func getBirth() -> Void{
         let date = Bdate.date
         
         // 创建一个日期格式器
@@ -204,7 +218,7 @@ class registered: UIViewController,UITextFieldDelegate,UIPickerViewDelegate{
     private func register() -> Void{
         let phpsql = E_Main();
         
-        DatetoStr()
+        getBirth()
         getSexValue()
         getCountryValue()
         
@@ -256,48 +270,6 @@ class registered: UIViewController,UITextFieldDelegate,UIPickerViewDelegate{
         }
     }
     
-    
-    func Register(_ file: String ) -> Void{ 
-        
-        let postString = "account=\(rAccount.text!)&password=\(rPassword.text!)";
-        let url = URL(string: "http://172.20.10.3:8080/php/\(file).php");
-        var request = URLRequest(url: url!);
-        request.httpMethod = "POST";
-        request.httpBody = postString.data(using: .utf8);
-        
-        let task = URLSession.shared.dataTask(with: request){
-            data , response , error in
-            
-            guard let data = data else {
-                print(error!);
-                return;
-            }
-            
-            do{
-                if let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: String]{
-                    
-                    DispatchQueue.main.async {
-                        let errorStatus = Int(json["errorStatus"]!)!;
-                        
-                        if (errorStatus == 1){
-                            print("ok")
-                            self.showMessage("註冊成功");
-                        }else if(errorStatus == 2){
-                            self.showMessage("帳號已被使用");
-                        }else if(errorStatus == 3){
-                            self.showMessage("post錯誤");
-                        }
-                    }
-                }
-            } catch let Error {
-                print(Error);
-                
-                let responseString = String(data: data, encoding: .utf8);
-                print(responseString!);
-            }
-        }
-        task.resume();
-    }
     
 }
 

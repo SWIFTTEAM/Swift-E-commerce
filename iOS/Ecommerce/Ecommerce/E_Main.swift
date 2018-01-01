@@ -13,7 +13,7 @@ import CoreData
 
 public class NSGetValue {
     struct IP {
-        static let ip: String = "172.20.10.9";
+        static let ip: String = "192.168.9.129";
     }
     
     struct Php_Files {
