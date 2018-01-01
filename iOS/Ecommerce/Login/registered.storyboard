@@ -11,10 +11,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Registered-->
         <scene sceneID="zEU-WI-YYf">
             <objects>
-                <viewController id="kdn-ya-hqh" sceneMemberID="viewController">
+                <viewController id="kdn-ya-hqh" customClass="registered" customModule="Ecommerce" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="eaa-H2-Zps"/>
                         <viewControllerLayoutGuide type="bottom" id="eIu-AU-gff"/>
@@ -161,7 +161,7 @@
                                                                                 <rect key="frame" x="8" y="13" width="152" height="26"/>
                                                                                 <nil key="textColor"/>
                                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                                <textInputTraits key="textInputTraits"/>
+                                                                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                                                             </textField>
                                                                         </subviews>
                                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -356,7 +356,7 @@
                                                                                 <rect key="frame" x="8" y="13" width="168" height="26.5"/>
                                                                                 <nil key="textColor"/>
                                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                                <textInputTraits key="textInputTraits"/>
+                                                                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                                                                             </textField>
                                                                         </subviews>
                                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -552,7 +552,7 @@
                                                                                 <rect key="frame" x="8" y="13" width="65" height="26.5"/>
                                                                                 <nil key="textColor"/>
                                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                                <textInputTraits key="textInputTraits"/>
+                                                                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                                             </textField>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gcT-lz-dmQ">
                                                                                 <rect key="frame" x="75" y="17" width="8" height="21"/>
@@ -566,7 +566,7 @@
                                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                                 <nil key="textColor"/>
                                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                                <textInputTraits key="textInputTraits"/>
+                                                                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                                             </textField>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tag-lv-hxM">
                                                                                 <rect key="frame" x="139" y="17" width="8" height="21"/>
@@ -580,7 +580,7 @@
                                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                                 <nil key="textColor"/>
                                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                                <textInputTraits key="textInputTraits"/>
+                                                                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                                             </textField>
                                                                         </subviews>
                                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -646,7 +646,7 @@
                                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                                 <nil key="textColor"/>
                                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                                <textInputTraits key="textInputTraits"/>
+                                                                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                                             </textField>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mSO-ry-Ifq">
                                                                                 <rect key="frame" x="75" y="16" width="8" height="21"/>
@@ -660,7 +660,7 @@
                                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                                 <nil key="textColor"/>
                                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                                <textInputTraits key="textInputTraits"/>
+                                                                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                                             </textField>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yKG-Jk-3Kv">
                                                                                 <rect key="frame" x="138" y="16" width="8" height="21"/>
@@ -674,7 +674,7 @@
                                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                                 <nil key="textColor"/>
                                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                                <textInputTraits key="textInputTraits"/>
+                                                                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                                             </textField>
                                                                         </subviews>
                                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -733,7 +733,7 @@
                                                                                 <rect key="frame" x="8" y="13" width="151" height="26.5"/>
                                                                                 <nil key="textColor"/>
                                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                                <textInputTraits key="textInputTraits"/>
+                                                                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                                             </textField>
                                                                         </subviews>
                                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -799,7 +799,7 @@
                                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                                 <nil key="textColor"/>
                                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                                <textInputTraits key="textInputTraits"/>
+                                                                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                                             </textField>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="biH-1m-WXN">
                                                                                 <rect key="frame" x="34" y="16" width="8" height="21"/>
@@ -813,7 +813,7 @@
                                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                                 <nil key="textColor"/>
                                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                                <textInputTraits key="textInputTraits"/>
+                                                                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                                             </textField>
                                                                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ojp-6I-yn8">
                                                                                 <rect key="frame" x="86" y="13" width="130" height="30"/>
@@ -878,6 +878,9 @@
                                                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Dps-2Y-spb">
                                                                                 <rect key="frame" x="0.0" y="12" width="49" height="31"/>
                                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                                <connections>
+                                                                                    <action selector="CheckAddressSame:" destination="kdn-ya-hqh" eventType="valueChanged" id="Rat-yg-syA"/>
+                                                                                </connections>
                                                                             </switch>
                                                                         </subviews>
                                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -912,7 +915,7 @@
                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                 <nil key="textColor"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                <textInputTraits key="textInputTraits"/>
+                                                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                             </textField>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IB5-8f-uSi">
                                                                 <rect key="frame" x="145" y="3" width="8" height="21"/>
@@ -926,7 +929,7 @@
                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                 <nil key="textColor"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                <textInputTraits key="textInputTraits"/>
+                                                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                             </textField>
                                                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="u35-MG-7k4">
                                                                 <rect key="frame" x="197" y="0.0" width="130" height="30"/>
@@ -1140,6 +1143,9 @@
                                                                                     <color key="titleColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
                                                                                     <color key="titleShadowColor" white="0.66666666669999997" alpha="1" colorSpace="calibratedWhite"/>
                                                                                 </state>
+                                                                                <connections>
+                                                                                    <action selector="regtestclick:" destination="kdn-ya-hqh" eventType="touchUpInside" id="biR-MX-mNj"/>
+                                                                                </connections>
                                                                             </button>
                                                                         </subviews>
                                                                         <constraints>
@@ -1291,6 +1297,32 @@
                         </constraints>
                     </view>
                     <size key="freeformSize" width="375" height="1000"/>
+                    <connections>
+                        <outlet property="Bdate" destination="b7I-tu-U2F" id="fL8-CE-mlk"/>
+                        <outlet property="Spicker" destination="dgM-zs-Bhp" id="Kad-nS-cdD"/>
+                        <outlet property="rAccount" destination="VPv-9O-CHE" id="wcC-bx-P6n"/>
+                        <outlet property="rAddressSame" destination="Dps-2Y-spb" id="jBY-Dt-tsX"/>
+                        <outlet property="rCellPhone1" destination="g8Y-oH-n9P" id="zwh-n1-1Hb"/>
+                        <outlet property="rCellPhone2" destination="L1U-Vl-AgB" id="gkG-6h-L7n"/>
+                        <outlet property="rCellPhone3" destination="F7w-Ht-783" id="Fsb-kd-fL2"/>
+                        <outlet property="rCellPhone_Spare1" destination="BbF-Fr-1uG" id="fEz-GZ-UVM"/>
+                        <outlet property="rCellPhone_Spare2" destination="eUW-C9-RuW" id="KqZ-g9-K4O"/>
+                        <outlet property="rCellPhone_Spare3" destination="2cL-0q-MKi" id="Imz-UB-FXV"/>
+                        <outlet property="rCompanyID" destination="kdS-Cm-3pp" id="y1N-vv-pLd"/>
+                        <outlet property="rCountryID" destination="e2Y-SE-4M6" id="6TR-BN-FGK"/>
+                        <outlet property="rEmail" destination="HqL-X9-9ws" id="iXW-le-OF8"/>
+                        <outlet property="rHomePhone" destination="0br-vV-yYL" id="Dt8-Z3-LNq"/>
+                        <outlet property="rIdentify" destination="veE-Eb-4wU" id="97v-sX-x6j"/>
+                        <outlet property="rMailingAddress1" destination="vrI-G1-a88" id="LWr-Y4-Sf2"/>
+                        <outlet property="rMailingAddress2" destination="pmd-1N-5Ub" id="g5i-M3-GLU"/>
+                        <outlet property="rMailingAddress3" destination="u35-MG-7k4" id="Ep5-YW-zxI"/>
+                        <outlet property="rNameChi" destination="zhb-Xn-TAm" id="jzc-X8-TBT"/>
+                        <outlet property="rNameEng" destination="4im-Ok-Ywm" id="Wgw-t5-FLZ"/>
+                        <outlet property="rPassword" destination="2op-2I-hkR" id="tYk-xa-2vv"/>
+                        <outlet property="rResidenceAddress1" destination="vga-wK-Pii" id="kcQ-TM-LO8"/>
+                        <outlet property="rResidenceAddress2" destination="Ot3-ia-ake" id="tGG-HB-9hC"/>
+                        <outlet property="rResidenceAddress3" destination="ojp-6I-yn8" id="FZi-1C-v2T"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wdE-fw-4fT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

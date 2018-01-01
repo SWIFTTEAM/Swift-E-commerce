@@ -214,7 +214,17 @@ class registered: UIViewController,UITextFieldDelegate,UIPickerViewDelegate{
         
     }
     //--------------------------------------------------------------------
-    //登入判斷
+    //確認所有格式
+    private func CheckFormate() -> Void{
+        if((rAccount.text! == "") && (rPassword.text! == "" ) && (rNameChi.text! == "" ) && (rNameEng.text! == "" ) && (rEmail.text! == "" ) && (rIdentify.text! == "" ) && (rCellPhone1.text! == "" ) && (rCellPhone2.text! == "" ) && (rCellPhone3.text! == "" ) && (rHomePhone.text! == "" ) && (rResidenceAddress1.text! == "" ) && (rResidenceAddress2.text! == "" ) && (rResidenceAddress3.text! == "" ) && (rMailingAddress1.text! == "" ) && (rMailingAddress2.text! == "" ) && (rMailingAddress3.text! == "" )){
+            
+            showMessage("必填表格尚未填寫");
+            
+        }
+    }
+
+    //--------------------------------------------------------------------
+    //註冊判斷
     private func register() -> Void{
         let phpsql = E_Main();
         

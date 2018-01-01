@@ -145,8 +145,11 @@ class forget_password: UIViewController,UITextFieldDelegate{
         let setIP = NSGetValue.IP.ip; // 抓IP位置
         let setFile = NSGetValue.Php_Files.forget_password ; //get php forget_password file
         
-        phpsql.PHP_CONNECTION(IP: setIP, FileName: setFile) { (json) in
-            let errorStatus = Int(json["errorStatus"]!)!;
+        phpsql.PHP_CONNECTION(IP: setIP, FileName: setFile) {(json) in
+            
+            var ToObjectArray: [String: AnyObject] = [:];
+            ToObjectArray = json[0] as! [String : AnyObject] ;
+            let errorStatus = Int(ToObjectArray["errorStatus"]! as! String)!;
             
             if (errorStatus == 1){
                 
