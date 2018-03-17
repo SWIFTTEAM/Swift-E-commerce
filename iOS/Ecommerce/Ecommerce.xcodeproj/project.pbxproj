@@ -23,6 +23,10 @@
 		DE21EF161FA2279B0027F747 /* login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE21EF151FA2279B0027F747 /* login.storyboard */; };
 		DE21EF191FA229200027F747 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE21EF181FA228A50027F747 /* Reachability.swift */; };
 		DE4D2B601FF3D32700DCDC82 /* indexCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4D2B5F1FF3D32700DCDC82 /* indexCustomCell.swift */; };
+		DE67177A205D46E7009E1FEE /* CountryIdSelect.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE671779205D46E7009E1FEE /* CountryIdSelect.swift */; };
+		DE67177C205D46F4009E1FEE /* policycontent.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE67177B205D46F4009E1FEE /* policycontent.storyboard */; };
+		DE67177E205D4709009E1FEE /* SexSelect.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE67177D205D4709009E1FEE /* SexSelect.swift */; };
+		DE671780205D4725009E1FEE /* remember.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE67177F205D4725009E1FEE /* remember.swift */; };
 		DE6CC01D1FE270D50073FEE5 /* bannerUseScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6CC01C1FE270D50073FEE5 /* bannerUseScrollView.swift */; };
 		DE7127DF1FE247ED0021CAE8 /* PHPSQL.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7127DE1FE247ED0021CAE8 /* PHPSQL.swift */; };
 		DE7127E21FE2487E0021CAE8 /* index.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7127E11FE2487E0021CAE8 /* index.swift */; };
@@ -84,6 +88,10 @@
 		DE21EF151FA2279B0027F747 /* login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = login.storyboard; sourceTree = "<group>"; };
 		DE21EF181FA228A50027F747 /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		DE4D2B5F1FF3D32700DCDC82 /* indexCustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = indexCustomCell.swift; sourceTree = "<group>"; };
+		DE671779205D46E7009E1FEE /* CountryIdSelect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountryIdSelect.swift; sourceTree = "<group>"; };
+		DE67177B205D46F4009E1FEE /* policycontent.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = policycontent.storyboard; sourceTree = "<group>"; };
+		DE67177D205D4709009E1FEE /* SexSelect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SexSelect.swift; sourceTree = "<group>"; };
+		DE67177F205D4725009E1FEE /* remember.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = remember.swift; sourceTree = "<group>"; };
 		DE6CC01C1FE270D50073FEE5 /* bannerUseScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bannerUseScrollView.swift; sourceTree = "<group>"; };
 		DE7127DE1FE247ED0021CAE8 /* PHPSQL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PHPSQL.swift; sourceTree = "<group>"; };
 		DE7127E11FE2487E0021CAE8 /* index.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = index.swift; sourceTree = "<group>"; };
@@ -194,12 +202,16 @@
 			children = (
 				DE21EF111FA226BD0027F747 /* login.swift */,
 				DE21EF151FA2279B0027F747 /* login.storyboard */,
-				DEF545131FC1F2150004DE3E /* registered.swift */,
+				DE671779205D46E7009E1FEE /* CountryIdSelect.swift */,
+				DE67177D205D4709009E1FEE /* SexSelect.swift */,
 				DE19A5F21FC711BD008A725D /* registered.storyboard */,
+				DEF545131FC1F2150004DE3E /* registered.swift */,
 				DEF545171FC1F2210004DE3E /* forget_password.swift */,
 				DEF545181FC1F2210004DE3E /* forget_password.storyboard */,
 				DE06EF081FC6F58B00735F9D /* pageview.swift */,
 				DE06EF061FC6F57B00735F9D /* pageview.storyboard */,
+				DE67177B205D46F4009E1FEE /* policycontent.storyboard */,
+				DE67177F205D4725009E1FEE /* remember.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -386,6 +398,7 @@
 				DE19A5F31FC711BD008A725D /* registered.storyboard in Resources */,
 				DE06EF071FC6F57B00735F9D /* pageview.storyboard in Resources */,
 				DE21EEED1FA226400027F747 /* LaunchScreen.storyboard in Resources */,
+				DE67177C205D46F4009E1FEE /* policycontent.storyboard in Resources */,
 				DE7127EF1FE269D60021CAE8 /* 2.png in Resources */,
 				DE21EEEA1FA226400027F747 /* Assets.xcassets in Resources */,
 				DE7127F11FE269DB0021CAE8 /* 3.png in Resources */,
@@ -421,6 +434,7 @@
 				DE21EEE81FA226400027F747 /* Ecommerce.xcdatamodeld in Sources */,
 				DE21EEE21FA226400027F747 /* E_Main.swift in Sources */,
 				DE7127E21FE2487E0021CAE8 /* index.swift in Sources */,
+				DE67177A205D46E7009E1FEE /* CountryIdSelect.swift in Sources */,
 				DE8BA1C61FF520A0008F9729 /* ContentViewCell.swift in Sources */,
 				DE6CC01D1FE270D50073FEE5 /* bannerUseScrollView.swift in Sources */,
 				DE9B9191205AC64A004424DF /* productDetail.swift in Sources */,
@@ -428,8 +442,10 @@
 				DE7127DF1FE247ED0021CAE8 /* PHPSQL.swift in Sources */,
 				DEF5451C1FC1F2210004DE3E /* forget_password.swift in Sources */,
 				DEE11F311FE986970048A654 /* memberprofile.swift in Sources */,
+				DE67177E205D4709009E1FEE /* SexSelect.swift in Sources */,
 				DEE11F2F1FE986580048A654 /* shopcart.swift in Sources */,
 				DE1504491FC30FCD00FC8F61 /* Internet.swift in Sources */,
+				DE671780205D4725009E1FEE /* remember.swift in Sources */,
 				DE06EF091FC6F58B00735F9D /* pageview.swift in Sources */,
 				DE21EEE01FA226400027F747 /* AppDelegate.swift in Sources */,
 				DE4D2B601FF3D32700DCDC82 /* indexCustomCell.swift in Sources */,

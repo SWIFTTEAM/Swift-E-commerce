@@ -115,9 +115,16 @@
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rememberPassword" translatesAutoresizingMaskIntoConstraints="NO" id="Qsn-aC-o7N">
                                         <rect key="frame" x="0.0" y="0.0" width="180.33333333333334" height="49"/>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="forgetPassword" translatesAutoresizingMaskIntoConstraints="NO" id="pwe-MP-8wu">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e4t-Jj-k9W">
                                         <rect key="frame" x="180.33333333333337" y="0.0" width="178.66666666666663" height="49"/>
-                                    </imageView>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="26"/>
+                                        <state key="normal" title="忘記密碼">
+                                            <color key="titleColor" red="0.9363949895" green="0.12077471839999999" blue="0.2272294467" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="9js-DK-8dV" kind="show" id="onp-Nr-Zjk"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="Qsn-aC-o7N" firstAttribute="width" secondItem="wpP-gb-r01" secondAttribute="width" multiplier="1/2" id="2Hc-pb-Isv"/>
@@ -161,6 +168,9 @@
                                         <state key="normal" title="隱私政策">
                                             <color key="titleColor" red="0.99483186010000002" green="0.99179548029999998" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <segue destination="t4k-rj-J13" kind="show" id="Qao-h9-nq7"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -225,6 +235,14 @@
             </objects>
             <point key="canvasLocation" x="133.33333333333334" y="136.95652173913044"/>
         </scene>
+        <!--forget_password-->
+        <scene sceneID="cgl-46-eoO">
+            <objects>
+                <viewControllerPlaceholder storyboardName="forget_password" id="9js-DK-8dV" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="516-nI-cPK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="772" y="137"/>
+        </scene>
         <!--index-->
         <scene sceneID="aLK-QB-XoT">
             <objects>
@@ -239,7 +257,15 @@
                 <viewControllerPlaceholder storyboardName="registered" id="v8Z-fT-DdK" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="caO-DU-HUI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="133" y="570"/>
+            <point key="canvasLocation" x="-115" y="569"/>
+        </scene>
+        <!--policycontent-->
+        <scene sceneID="ELA-yn-KCK">
+            <objects>
+                <viewControllerPlaceholder storyboardName="policycontent" id="t4k-rj-J13" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xms-bM-dHW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="395" y="568"/>
         </scene>
     </scenes>
     <resources>
@@ -247,7 +273,6 @@
         <image name="Edit" width="337" height="122"/>
         <image name="agree" width="64" height="64"/>
         <image name="bg-1" width="1080" height="1920"/>
-        <image name="forgetPassword" width="248" height="82"/>
         <image name="login" width="313" height="106"/>
         <image name="rememberPassword" width="252" height="82"/>
         <image name="signin" width="815" height="250"/>

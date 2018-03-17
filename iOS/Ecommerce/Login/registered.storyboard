@@ -35,6 +35,9 @@
                                         <state key="normal" title="Button" image="back">
                                             <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <segue destination="8rP-oh-E4y" kind="unwind" unwindAction="unwindToLoginFor:" id="CBe-aW-lVc"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="註冊" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JyC-O2-Wqn">
                                         <rect key="frame" x="53" y="13" width="269" height="35"/>
@@ -47,7 +50,6 @@
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="eYc-Ma-Mml" secondAttribute="height" multiplier="1:1" id="xnX-uy-Q49"/>
                                         </constraints>
-                                        <state key="normal" backgroundImage="shopping-cart"/>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -1325,6 +1327,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wdE-fw-4fT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="8rP-oh-E4y" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="-507.1875" y="-71.83098591549296"/>
         </scene>
@@ -1332,6 +1335,5 @@
     <resources>
         <image name="back" width="512" height="512"/>
         <image name="bg-1" width="1080" height="1920"/>
-        <image name="shopping-cart" width="512" height="512"/>
     </resources>
 </document>

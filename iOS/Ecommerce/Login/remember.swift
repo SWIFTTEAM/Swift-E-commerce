@@ -9,7 +9,7 @@
 import UIKit
 
 public class remember: UIViewController {
-    
+   /*
    //一開始要先判斷有沒有登入過,自己放進資料庫
    //先在sqlite建立資料庫與資料表
    //在登入之後把帳密資料傳進去
@@ -27,5 +27,5 @@ public class remember: UIViewController {
     
     
     return(account,password);
-}
+}*/
 }
