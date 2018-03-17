@@ -12,6 +12,7 @@ class ContentViewCell: UITableViewCell {
 
     @IBOutlet var selectClick: UIButton!;
     @IBOutlet var productImage: UIImageView!;
+    @IBOutlet var productQuantity: UILabel!
     @IBOutlet var productName: UILabel!;
     @IBOutlet var productFormat: UILabel!;
     @IBOutlet var productPrice: UILabel!;

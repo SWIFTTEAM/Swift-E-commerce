@@ -28,6 +28,8 @@ public class NSGetValue {
         static let forget_password: String = mainF+"forget_password.php";
         static let checkpassword: String = mainF+"checkpassword.php";
         static let index: String = mainF+"Index/index.php";
+        static let productDetail: String = mainF+"Index/productDetail.php";
+        static let shopcart: String = mainF+"Index/ShopCart/shopcart.php";
     }
     
     struct Php_Picture {
@@ -82,7 +84,7 @@ func LoadPicUrl(imageAddress: String) -> UIImage?{
 ///=================================showMessage=================================
 
 public func showMessage(UI: UIViewController, _ string: String) -> Void {
-    
+        
     let myAlert: UIAlertController = UIAlertController(title: "System Messgae", message: string, preferredStyle: .alert);
     let action = UIAlertAction(title: "關閉", style: UIAlertActionStyle.default, handler: {action in print("done")});
     myAlert.addAction(action);

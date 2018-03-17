@@ -190,6 +190,7 @@
                                             <outlet property="productImage" destination="vFm-fL-k25" id="zOA-pV-A2l"/>
                                             <outlet property="productName" destination="at5-Tn-HZc" id="jNQ-25-13g"/>
                                             <outlet property="productPrice" destination="tKu-n8-ZsH" id="ETC-qW-WEx"/>
+                                            <outlet property="productQuantity" destination="RIH-VE-X8C" id="7nm-cA-GJh"/>
                                             <outlet property="selectClick" destination="KaW-v7-jEN" id="0Kb-K8-M81"/>
                                         </connections>
                                     </tableViewCell>

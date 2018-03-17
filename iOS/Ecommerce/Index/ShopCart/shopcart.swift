@@ -29,12 +29,18 @@ class shopcart: UIViewController, UITableViewDelegate, UITableViewDataSource {
         let phpsql = E_Main();
         
         let setIP = NSGetValue.IP.ip;
-        let setFile =  NSGetValue.Php_Files.index;
+        let setFile =  NSGetValue.Php_Files.shopcart;
+        
+        var postarray: [String] = [];
+        postarray.append("id=\(NSGetValue.AP.id)");
+        print(NSGetValue.AP.id)
+        let poststring = phpsql.postArrToStr(postarray); // return post
+        phpsql.postContent = poststring;
         
         phpsql.PHP_CONNECTION(IP: setIP, FileName: setFile) { (json) in
             self.values = json;
-            print("self.values");
             print(self.values);
+            self.tableView.reloadData();
         }
         
         
@@ -42,21 +48,32 @@ class shopcart: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        print("aaaaaaa")
-        return 1;
+        return values.count;
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {        
-        let cell: UITableViewCell!;
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        if(indexPath.row==0){
-            cell = tableView.dequeueReusableCell(withIdentifier: "customerCell", for: indexPath) as! CustomerViewCell;
-     
+        var ToObjectArray: [String: String] = values[indexPath.row] as! [String : String] ;
+        
+        if(indexPath.row<0){
+            let cell = tableView.dequeueReusableCell(withIdentifier: "customerCell", for: indexPath) as! CustomerViewCell;
+            cell.customerName.text = ToObjectArray["NameChi"]!+"("+ToObjectArray["Account"]!+")";
+            
+            return cell;
         }else{
-            cell = tableView.dequeueReusableCell(withIdentifier: "contentCell", for: indexPath) as! ContentViewCell;
-           
+            let cell = tableView.dequeueReusableCell(withIdentifier: "contentCell", for: indexPath) as! ContentViewCell;
+            cell.productName.text = ToObjectArray["Name"];
+            cell.productFormat.text = "規格: "+ToObjectArray["Color"]!+" , "+ToObjectArray["Size"]!;
+            cell.productPrice.text = "單價: "+ToObjectArray["Price"]!;
+            cell.productQuantity.text = "數量: "+ToObjectArray["quantity"]!;
+            
+            let IP = NSGetValue.IP.ip;
+            let File =  NSGetValue.Php_Picture.products;
+            let imageAddress = IP+File+ToObjectArray["PictureName"]!;
+            cell.productImage.image = LoadPicUrl(imageAddress: imageAddress);
+            
+            return cell;
         }
-         return cell;
     }
 
     override func didReceiveMemoryWarning() {

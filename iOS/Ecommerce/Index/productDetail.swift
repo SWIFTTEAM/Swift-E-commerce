@@ -10,30 +10,38 @@ import UIKit
 
 class productDetail: UIViewController {
     
+    @IBOutlet var productName: UILabel!;
+    
     var PD_id: Int = 0; //產品編號
+    var values: NSArray = [];
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        print("PD_id = \(PD_id)");
+        phpConnect();
     }
     
-    
+    func phpConnect() -> Void{
+        let phpsql = E_Main();
+        
+        var postarray: [String] = [];
+        postarray.append("PD_id=\(PD_id)");
+        let poststring = phpsql.postArrToStr(postarray); // return post
+        phpsql.postContent = poststring;
+        
+        let setIP = NSGetValue.IP.ip;
+        let setFile =  NSGetValue.Php_Files.productDetail;
+        
+        phpsql.PHP_CONNECTION(IP: setIP, FileName: setFile) { (json) in
+            var ToObjectArray: [String: AnyObject] = [:];
+            ToObjectArray = json[0] as! [String : AnyObject] ;
+            self.productName.text = ToObjectArray["Name"] as? String;
+        }
+        
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
