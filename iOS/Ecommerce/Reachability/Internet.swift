@@ -9,6 +9,40 @@
 import Foundation
 import UIKit
 
+/*
+protocol InternetI {
+    
+    func InternetCtrateView() -> Void ;
+    
+}
+extension InternetI{
+    
+    func InternetCtrateView(UI: UIViewController , VIEW: UIView) -> Void{
+        
+        var DynamicView: UIView;
+        DynamicView = UIView(frame: CGRect(x: 0,
+                                           y: VIEW.frame.maxY,
+                                           width: VIEW.bounds.size.width,
+                                           height: VIEW.bounds.size.height));
+        DynamicView.backgroundColor = UIColor.red;
+        DynamicView.alpha = 0.8;
+        UI.view.addSubview(DynamicView);
+        ReachabilityInternet();
+    }
+    
+    func ReachabilityInternet() -> Void {
+        NotificationCenter.default.addObserver(self, selector: #selector(internetChanged), name: ReachabilityChangedNotification, object: reachability);
+        do{
+            try reachability.startNotifier();
+        }catch{
+            print("could not start reachability");
+            return;
+        }
+    }
+    
+}*/
+
+
 var anyClass: AnyObject!;
 
 class Internet: UIViewController{

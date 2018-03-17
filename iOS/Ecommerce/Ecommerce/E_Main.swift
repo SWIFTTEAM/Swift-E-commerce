@@ -12,16 +12,27 @@ import CoreData
 ///=================================Get Value=================================
 
 public class NSGetValue {
+    
+    struct AP{
+        static var id: Int = 0;
+    }
+    
     struct IP {
-        static let ip: String = "192.168.9.129";
+        static let ip: String = "http://172.20.10.9:8080/";
     }
     
     struct Php_Files {
-        static let login: String = "login.php";
-        static let register: String = "register.php";
-        static let forget_password: String = "forget_password.php";
-        static let checkpassword: String = "checkpassword.php";
-        static let index: String = "Index/index.php";
+        private static let mainF: String = "E-iOSphp/"
+        static let login: String = mainF+"login.php";
+        static let register: String = mainF+"register.php";
+        static let forget_password: String = mainF+"forget_password.php";
+        static let checkpassword: String = mainF+"checkpassword.php";
+        static let index: String = mainF+"Index/index.php";
+    }
+    
+    struct Php_Picture {
+        private static let mainF: String = "E-PICphp/"
+        static let products: String = mainF+"products/";
     }
 }
 
@@ -40,6 +51,34 @@ class E_CoreData: CoreDataConnect{
     }
 };
 
+///=================================CoreData=================================
+
+func LoadPicUrl(imageAddress: String) -> UIImage?{
+    if let imageUrl = URL(string: imageAddress){
+        
+        var downLoadImage: UIImage?;
+        let group = DispatchGroup()
+        group.enter()
+        
+        DispatchQueue.global().async {
+            do{
+                let imageData = try Data(contentsOf: imageUrl);
+                downLoadImage = UIImage(data: imageData)!
+            }catch{
+                print("ERROR : "+error.localizedDescription)
+            }
+            group.leave()
+        }
+        
+        group.wait()
+        return downLoadImage;
+        
+    }else{
+        print("ERROR : The picture's url isn't exist !")
+        return nil;
+    }
+}
+
 ///=================================showMessage=================================
 
 public func showMessage(UI: UIViewController, _ string: String) -> Void {
@@ -49,6 +88,7 @@ public func showMessage(UI: UIViewController, _ string: String) -> Void {
     myAlert.addAction(action);
     UI.present(myAlert, animated: true, completion: nil);
 }
+
 
 
 

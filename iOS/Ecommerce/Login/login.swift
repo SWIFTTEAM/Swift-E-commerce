@@ -213,12 +213,19 @@ class login: UIViewController, UITextFieldDelegate{
                 let codeString = self.replacing(self.codeText.text!);
                 
                 if (codeString == self.code){
-                    showMessage(UI: self,"登入成功");
+                    let CustomerID = Int(ToObjectArray["CustomerID"]! as! String)!;
+                    NSGetValue.AP.id = CustomerID;
+                    //showMessage(UI: self,"登入成功");
+                    if let vc = self.storyboard?.instantiateViewController(withIdentifier: "index"){
+                        self.show(vc, sender: self);
+                    }
+                    
                 }else{
                     showMessage(UI: self,"驗證碼錯誤");
                 }
             }else if(errorStatus == 2){
                 showMessage(UI: self,"帳號或密碼有錯誤");
+                return;
             }else if(errorStatus == 3){
                 showMessage(UI: self,"post錯誤");
             }

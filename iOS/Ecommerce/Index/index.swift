@@ -13,15 +13,16 @@ class index: UIViewController, UISearchBarDelegate, UITableViewDataSource, UITab
     @IBOutlet var searchBar: UISearchBar!;
     @IBOutlet var tableView: UITableView!;
     
-    var dataArray: [String : String] = [:];
+    var values: NSArray = [];
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        searchBar.delegate = self;
-        tableView.delegate = self;
-        tableView.dataSource = self;
-        phpconnect();
+        self.searchBar.delegate = self;
+        self.tableView.delegate = self;
+        self.tableView.dataSource = self;
+
+         phpconnect();
     }
     
     func phpconnect() -> Void{
@@ -29,10 +30,11 @@ class index: UIViewController, UISearchBarDelegate, UITableViewDataSource, UITab
         
         let setIP = NSGetValue.IP.ip;
         let setFile =  NSGetValue.Php_Files.index;
-        phpsql.PHP_CONNECTION(IP: setIP, FileName: setFile) { (json) in
-            print(json)
-        }
         
+        phpsql.PHP_CONNECTION(IP: setIP, FileName: setFile) { (json) in
+            self.values = json;
+            self.tableView.reloadData();
+        }
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
@@ -45,17 +47,48 @@ class index: UIViewController, UISearchBarDelegate, UITableViewDataSource, UITab
         return true
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 500.0;
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return self.dataArray.count ;
+        //print(values.count)
+        return values.count ;
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "prodctCellLeft", for: indexPath) as! indexCustomCell;
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell_product", for: indexPath) as! indexCustomCell;
+        
+        var ToObjectArray: [String: String] = [:];
+        ToObjectArray = values[indexPath.row] as! [String : String] ;
+        
+        cell.tag = Int(ToObjectArray["ProductID"]!)!
+        cell.productCustomer.text = "賣家："+ToObjectArray["Account"]!;
+        cell.productName.text = ToObjectArray["Name"] ;
+        cell.productPrice.text = "$"+ToObjectArray["Price"]!;
+        
+        let IP = NSGetValue.IP.ip;
+        let File =  NSGetValue.Php_Picture.products;
+        let imageAddress = IP+File+ToObjectArray["PictureName"]!
+        cell.productImage.image = LoadPicUrl(imageAddress: imageAddress);
         
         return cell;
     }
-
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if(segue.identifier == "INtoPD"){
+            let Celltag = sender as! UITableViewCell;
+            let newVC: productDetail = segue.destination as! productDetail;
+            let PD_id = Celltag.tag;
+            newVC.PD_id = PD_id;
+        }
+    }
+    
+    @IBAction func unwind(for segue: UIStoryboardSegue) {
+        //self.navigationController?.popViewController(animated: true);
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
        

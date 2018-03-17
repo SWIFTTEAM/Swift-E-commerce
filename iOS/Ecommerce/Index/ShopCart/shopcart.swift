@@ -8,28 +8,64 @@
 
 import UIKit
 
-class shopcart: UIViewController {
-
+class shopcart: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
+    @IBOutlet var tableView: UITableView!;
+    var values: NSArray = [];
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        phpconnect();
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        tableView.reloadData();
+    }
+    
+    func phpconnect() -> Void{
+        let phpsql = E_Main();
+        
+        let setIP = NSGetValue.IP.ip;
+        let setFile =  NSGetValue.Php_Files.index;
+        
+        phpsql.PHP_CONNECTION(IP: setIP, FileName: setFile) { (json) in
+            self.values = json;
+            print("self.values");
+            print(self.values);
+        }
+        
+        
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        print("aaaaaaa")
+        return 1;
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {        
+        let cell: UITableViewCell!;
+        
+        if(indexPath.row==0){
+            cell = tableView.dequeueReusableCell(withIdentifier: "customerCell", for: indexPath) as! CustomerViewCell;
+     
+        }else{
+            cell = tableView.dequeueReusableCell(withIdentifier: "contentCell", for: indexPath) as! ContentViewCell;
+           
+        }
+         return cell;
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @IBAction func unwind(_ sender: UIButton) {
+        dismiss(animated: true, completion: nil)
     }
-    */
+    
 
 }

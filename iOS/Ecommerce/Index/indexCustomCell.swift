@@ -14,7 +14,7 @@ class indexCustomCell: UITableViewCell {
     @IBOutlet var productImage: UIImageView!;
     @IBOutlet var productName: UILabel!;
     @IBOutlet var productPrice: UILabel!;
-    
+    @IBOutlet var productCustomer: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
     }

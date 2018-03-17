@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="arb-f8-XXY">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="arb-f8-XXY">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -133,6 +133,9 @@
                             <button opaque="NO" alpha="0.85000002384185791" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6gb-pR-Rey" userLabel="signup">
                                 <rect key="frame" x="217.33333333333337" y="464" width="165.66666666666663" height="67"/>
                                 <state key="normal" backgroundImage="signup"/>
+                                <connections>
+                                    <segue destination="v8Z-fT-DdK" kind="show" id="UgU-zr-Jdr"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="版本 1.0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8lx-4Y-feZ">
                                 <rect key="frame" x="0.0" y="716.66666666666663" width="414" height="19.333333333333371"/>
@@ -221,6 +224,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HVg-Em-chQ" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="133.33333333333334" y="136.95652173913044"/>
+        </scene>
+        <!--index-->
+        <scene sceneID="aLK-QB-XoT">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="index" storyboardName="index" id="Eo5-iW-5f6" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kv4-ti-sOQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="134" y="-217"/>
+        </scene>
+        <!--registered-->
+        <scene sceneID="uWV-U4-Ef6">
+            <objects>
+                <viewControllerPlaceholder storyboardName="registered" id="v8Z-fT-DdK" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="caO-DU-HUI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="133" y="570"/>
         </scene>
     </scenes>
     <resources>
