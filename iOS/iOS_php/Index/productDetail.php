@@ -1,9 +1,9 @@
 <?php
 
 if(isset($_POST['PD_id'])){
-	include("mysqlConnect.php");
+	include("../mysqlConnect.php");
 	
-	$PD_id = $_POST['account'];
+	$PD_id = $_POST['PD_id'];
 	
 	$selectS = "SELECT * 
 				FROM `Products` 
@@ -18,8 +18,6 @@ if(isset($_POST['PD_id'])){
 		}
 		echo json_encode($results);
 	}
-}else{
-	echo"a";
 }
 
 ?>
