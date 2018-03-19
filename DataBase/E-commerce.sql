@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- 主機: localhost
--- 產生時間： 2017 年 12 月 21 日 19:41
+-- 產生時間： 2018 年 03 月 19 日 03:50
 -- 伺服器版本: 10.1.21-MariaDB
 -- PHP 版本： 5.6.30
 
@@ -534,7 +534,9 @@ CREATE TABLE `Customers` (
 --
 
 INSERT INTO `Customers` (`CustomerID`, `Account`, `Password`, `NameChi`, `NameEng`, `Email`, `Identify`, `Birth`, `CellPhone`, `CellPhone_Spare`, `HomePhone`, `ResidenceAddress`, `MailingAddress`, `DeliveryAddress`, `RegisteredTime`, `RegisteredTimeStamp`, `Sex`, `CountryID`, `CompanyID`) VALUES
-(9, 'shijie', 'kiet1234', '黃仕杰', 'Huang Shi-Jie', 'kiettam1234@gamil.com', 'H123456789', '1997-08-20', '0912-345-678', NULL, '03-1234567', '330-12 桃園市桃園區嘿嘿街1號', '220-34 新北市板橋區哈哈街2號', '220-56 新北市板橋區嗚嗚街3號', '2017-12-12 16:00:00', 2147483647, '1', 886, NULL);
+(9, 'shijie', 'kiet1234', '黃仕杰', 'Huang Shi-Jie', 'kiettam1234@gamil.com', 'H123456789', '1997-08-20', '0912-345-678', NULL, '03-1234567', '330-12 桃園市桃園區嘿嘿街1號', '220-34 新北市板橋區哈哈街2號', '220-56 新北市板橋區嗚嗚街3號', '2017-12-12 16:00:00', 2147483647, '1', 886, NULL),
+(10, 'shijie2', 'kiet4321', '王大同', 'Wang Da Tong', 'jay123@gamil.com', 'J123456789', '1998-02-03', '0912-345-678', NULL, '03-3342112', '330-12 桃園市桃園區嘿嘿街1號', '220-34 新北市板橋區哈哈街2號', '220-56 新北市板橋區嗚嗚街3號', '2017-12-12 16:00:00', 2147483647, '1', 886, NULL),
+(11, 'shijie3', 'shijie3', '仕杰3', '', '', '', '1970-01-01', '--', '--', '', '--', '--', NULL, '2018-03-18 00:15:43', 1521303343, '1', 886, 0);
 
 -- --------------------------------------------------------
 
@@ -615,11 +617,46 @@ CREATE TABLE `Products` (
   `ProductID` int(10) NOT NULL,
   `Name` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `Price` int(10) NOT NULL,
+  `Size` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
+  `Color` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `PictureName` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   `LikeNum` int(10) NOT NULL,
   `SortID` int(10) NOT NULL,
   `CustomerID` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- 資料表的匯出資料 `Products`
+--
+
+INSERT INTO `Products` (`ProductID`, `Name`, `Price`, `Size`, `Color`, `PictureName`, `LikeNum`, `SortID`, `CustomerID`) VALUES
+(1, 'ZINIF襯衫', 980, 'S,M,L', '藍色,黑色,紅色', 'PS2.png', 100, 1, 9),
+(2, '韓國代購', 2000, 'S,M,L', '藍色,黑色,紅色', 'PS1.png', 820, 2, 9),
+(3, 'PS1 - C1', 29800, 'C1', '黑色,煙灰色', 'PS1C1.png', 2000, 1, 11);
+
+-- --------------------------------------------------------
+
+--
+-- 資料表結構 `ShopCart`
+--
+
+CREATE TABLE `ShopCart` (
+  `CartID` int(10) NOT NULL,
+  `Size` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
+  `Color` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
+  `quantity` int(10) NOT NULL,
+  `ProductID` int(10) NOT NULL,
+  `CustomerID` int(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- 資料表的匯出資料 `ShopCart`
+--
+
+INSERT INTO `ShopCart` (`CartID`, `Size`, `Color`, `quantity`, `ProductID`, `CustomerID`) VALUES
+(1, 'S', '黑色', 2, 2, 10),
+(2, 'M', '藍色', 1, 1, 10),
+(3, 'C1', '黑色', 3, 3, 10);
 
 -- --------------------------------------------------------
 
@@ -709,6 +746,12 @@ ALTER TABLE `Products`
   ADD PRIMARY KEY (`ProductID`);
 
 --
+-- 資料表索引 `ShopCart`
+--
+ALTER TABLE `ShopCart`
+  ADD PRIMARY KEY (`CartID`);
+
+--
 -- 資料表索引 `Sorts`
 --
 ALTER TABLE `Sorts`
@@ -737,7 +780,7 @@ ALTER TABLE `Counties`
 -- 使用資料表 AUTO_INCREMENT `Customers`
 --
 ALTER TABLE `Customers`
-  MODIFY `CustomerID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `CustomerID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 --
 -- 使用資料表 AUTO_INCREMENT `FollowProducts`
 --
@@ -762,7 +805,12 @@ ALTER TABLE `PolicyContent`
 -- 使用資料表 AUTO_INCREMENT `Products`
 --
 ALTER TABLE `Products`
-  MODIFY `ProductID` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `ProductID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+--
+-- 使用資料表 AUTO_INCREMENT `ShopCart`
+--
+ALTER TABLE `ShopCart`
+  MODIFY `CartID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- 使用資料表 AUTO_INCREMENT `Sorts`
 --
