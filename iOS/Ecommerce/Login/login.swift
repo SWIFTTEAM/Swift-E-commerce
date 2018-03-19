@@ -214,7 +214,7 @@ class login: UIViewController, UITextFieldDelegate{
                 
                 if (codeString == self.code){
                     let CustomerID = Int(ToObjectArray["CustomerID"]! as! String)!;
-                    NSGetValue.AP.id = CustomerID;
+                    NSGetValue.SET.id = CustomerID;
                     //showMessage(UI: self,"登入成功");
                     if let vc = self.storyboard?.instantiateViewController(withIdentifier: "index"){
                         self.show(vc, sender: self);

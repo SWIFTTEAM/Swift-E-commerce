@@ -13,8 +13,9 @@ import CoreData
 
 public class NSGetValue {
     
-    struct AP{
+    struct SET{
         static var id: Int = 0;
+        static var currentVC: UIViewController = UIViewController();
     }
     
     struct IP {
@@ -84,7 +85,9 @@ func LoadPicUrl(imageAddress: String) -> UIImage?{
 ///=================================showMessage=================================
 
 public func showMessage(UI: UIViewController, _ string: String) -> Void {
-        
+    
+    //let CVC = NSGetValue.SET.currentVC;
+
     let myAlert: UIAlertController = UIAlertController(title: "System Messgae", message: string, preferredStyle: .alert);
     let action = UIAlertAction(title: "關閉", style: UIAlertActionStyle.default, handler: {action in print("done")});
     myAlert.addAction(action);

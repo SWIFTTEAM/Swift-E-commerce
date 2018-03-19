@@ -15,14 +15,18 @@ class index: UIViewController, UISearchBarDelegate, UITableViewDataSource, UITab
     
     var values: NSArray = [];
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
-        self.searchBar.delegate = self;
-        self.tableView.delegate = self;
-        self.tableView.dataSource = self;
-
-         phpconnect();
+        self.tableView.isHidden = true;
+        NSGetValue.SET.currentVC = self;
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        phpconnect();
     }
     
     func phpconnect() -> Void{
@@ -33,6 +37,7 @@ class index: UIViewController, UISearchBarDelegate, UITableViewDataSource, UITab
         
         phpsql.PHP_CONNECTION(IP: setIP, FileName: setFile) { (json) in
             self.values = json;
+            self.tableView.isHidden = false;
             self.tableView.reloadData();
         }
     }
@@ -53,7 +58,6 @@ class index: UIViewController, UISearchBarDelegate, UITableViewDataSource, UITab
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        //print(values.count)
         return values.count ;
     }
     

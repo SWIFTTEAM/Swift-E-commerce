@@ -13,16 +13,15 @@ class shopcart: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet var tableView: UITableView!;
     var values: NSArray = [];
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.tableView.isHidden = true;
+        NSGetValue.SET.currentVC = self;
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        phpconnect();
-    }
     override func viewDidAppear(_ animated: Bool) {
-        tableView.reloadData();
+        super.viewDidAppear(animated)
+        phpconnect();
     }
     
     func phpconnect() -> Void{
@@ -32,18 +31,15 @@ class shopcart: UIViewController, UITableViewDelegate, UITableViewDataSource {
         let setFile =  NSGetValue.Php_Files.shopcart;
         
         var postarray: [String] = [];
-        postarray.append("id=\(NSGetValue.AP.id)");
-        print(NSGetValue.AP.id)
+        postarray.append("id=\(NSGetValue.SET.id)");
         let poststring = phpsql.postArrToStr(postarray); // return post
         phpsql.postContent = poststring;
         
         phpsql.PHP_CONNECTION(IP: setIP, FileName: setFile) { (json) in
             self.values = json;
-            print(self.values);
+            self.tableView.isHidden = false;
             self.tableView.reloadData();
         }
-        
-        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

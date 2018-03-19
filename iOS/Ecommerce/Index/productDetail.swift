@@ -11,17 +11,22 @@ import UIKit
 class productDetail: UIViewController {
     
     @IBOutlet var productName: UILabel!;
+    @IBOutlet var productPrice: UILabel!;
     
     var PD_id: Int = 0; //產品編號
     var values: NSArray = [];
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        phpConnect();
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        NSGetValue.SET.currentVC = self;
     }
     
-    func phpConnect() -> Void{
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        phpconnect();
+    }
+    
+    func phpconnect() -> Void{
         let phpsql = E_Main();
         
         var postarray: [String] = [];
@@ -36,8 +41,8 @@ class productDetail: UIViewController {
             var ToObjectArray: [String: AnyObject] = [:];
             ToObjectArray = json[0] as! [String : AnyObject] ;
             self.productName.text = ToObjectArray["Name"] as? String;
+            self.productPrice.text = "$"+(ToObjectArray["Price"]! as! String);
         }
-        
     }
     
     override func didReceiveMemoryWarning() {

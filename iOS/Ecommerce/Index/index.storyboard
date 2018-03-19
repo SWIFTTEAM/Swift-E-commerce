@@ -33,6 +33,9 @@
                                     <searchBar contentMode="redraw" barStyle="black" searchBarStyle="minimal" translatesAutoresizingMaskIntoConstraints="NO" id="Yb1-ck-RiR">
                                         <rect key="frame" x="18" y="13" width="343" height="35"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="hCc-FB-UUo" id="s8W-bE-Vm0"/>
+                                        </connections>
                                     </searchBar>
                                     <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0h6-iD-mk0" userLabel="shopCart">
                                         <rect key="frame" x="361" y="13" width="35" height="35"/>
@@ -90,7 +93,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7hh-pX-cNO" userLabel="View_advertising">
-                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="233"/>
+                                                    <rect key="frame" x="0.0" y="-0.6666666666666714" width="414" height="233"/>
                                                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="7hh-pX-cNO" secondAttribute="height" multiplier="16:9" id="v9G-9d-rhi"/>
@@ -117,7 +120,7 @@
                                                     <rect key="frame" x="0.0" y="4.6666666666666679" width="414" height="45"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="最新產品" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J2q-fS-eJW">
-                                                            <rect key="frame" x="8.0000000000000036" y="11" width="61.333333333333343" height="21"/>
+                                                            <rect key="frame" x="7.9999999999999964" y="11" width="61.666666666666657" height="21"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                             <color key="textColor" red="0.98431372549999996" green="1" blue="0.99215686270000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -173,7 +176,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bdQ-XX-kl9">
-                                                    <rect key="frame" x="366.33333333333331" y="456" width="39.666666666666686" height="20.333333333333314"/>
+                                                    <rect key="frame" x="366.66666666666669" y="456" width="39.333333333333314" height="19.333333333333314"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" red="0.43529412150000002" green="0.4431372583" blue="0.47450980539999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -201,6 +204,10 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="hCc-FB-UUo" id="tkM-Oz-AhA"/>
+                                    <outlet property="delegate" destination="hCc-FB-UUo" id="ZPj-R9-HNw"/>
+                                </connections>
                             </tableView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="aBJ-kI-bC3" userLabel="list stackview">
                                 <rect key="frame" x="0.0" y="1145" width="414" height="55"/>
@@ -339,12 +346,21 @@
                                             <constraint firstAttribute="width" secondItem="PUx-42-O5f" secondAttribute="height" multiplier="1:1" id="O2L-rO-yLx"/>
                                         </constraints>
                                     </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mJg-RV-csD" userLabel="LabelDetail">
-                                        <rect key="frame" x="8" y="422" width="48" height="24"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="價錢" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mJg-RV-csD" userLabel="LabelDetail">
+                                        <rect key="frame" x="8" y="422" width="41" height="24"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <color key="textColor" red="0.9363949895" green="0.12077471839999999" blue="0.2272294467" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="mhw-Yp-YGH">
+                                        <rect key="frame" x="8" y="662" width="110" height="200"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </stackView>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="a9t-Hu-Ora">
+                                        <rect key="frame" x="8" y="454" width="398" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" red="0.99991279840000002" green="1" blue="0.99988144639999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" red="0.99991279840000002" green="1" blue="0.99988144639999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -427,6 +443,7 @@
                     <size key="freeformSize" width="414" height="1200"/>
                     <connections>
                         <outlet property="productName" destination="ECz-V7-Idj" id="qtP-24-baZ"/>
+                        <outlet property="productPrice" destination="mJg-RV-csD" id="I8G-rP-jgE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="md8-ky-rgv" userLabel="First Responder" sceneMemberID="firstResponder"/>

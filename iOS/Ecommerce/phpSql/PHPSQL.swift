@@ -31,6 +31,11 @@ extension PHPSQL{
     
     func PHP_CONNECTION(IP: String , FileName: String , content:@escaping (_ json: NSArray) -> Void) -> Void {
         
+        let CVC = NSGetValue.SET.currentVC;
+        let LV = LoadingView();
+        let lv = LV.loadingview(CVC);
+        CVC.view.addSubview(lv);
+        
         let url = URL(string: "\(IP)\(FileName)");
         var request = URLRequest(url: url!);
         request.httpMethod = "POST";
@@ -44,15 +49,20 @@ extension PHPSQL{
                 return ;
             }
             
-            let responseString = String(data: data, encoding: .utf8);
-            print(responseString!);
+            print(url as Any);
             
             do{
-                print(url as Any);
+                let responseString = String(data: data, encoding: .utf8);
+                print(responseString!);
+                
                 let json = try JSONSerialization.jsonObject(with: data, options: []) as! NSArray;
+                
                 DispatchQueue.main.async {
+                    lv.isHidden = true;
+                    UIApplication.shared.endIgnoringInteractionEvents();
                     content(json);
                 }
+                
             } catch let Error {
                 print("PHP Connection error：\(Error)");
             }
