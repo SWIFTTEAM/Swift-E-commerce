@@ -11,6 +11,7 @@ import UIKit
 
 class registered: UIViewController,UITextFieldDelegate,UIPickerViewDelegate{
     
+    //abc
     
     @IBOutlet weak var rAccount: UITextField!
     @IBOutlet weak var rPassword: UITextField!
